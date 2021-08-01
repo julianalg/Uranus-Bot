@@ -69,5 +69,5 @@ async def on_message(message):
 			
 	if message.content == 'credits':
 		await message.channel.send('here are all of the cool people who gave ideas to the bot: ',
-					   'https://github.com/julianagar/Poop-Bot/blob/main/bot.py')
+					   'https://github.com/julianagar/Poop-Bot/blob/main/README.md')
 	
