@@ -1,10 +1,21 @@
 # shit ton of modules i wanna die 
-import os 
-import discord
-import time
-import random
-from dotenv import load_dotenv
-from discord.ext import commands
+import os  # await commands
+import discord # obvious
+import time # time.sleep
+import random # randoming lists
+from dotenv import load_dotenv # other discord stuff
+from discord.ext import commands # more discord stuff :zany_face:
+# for the recommendation feature (importing from recommendationlists.py)
+from recommedationlists import romanceMovies
+from recommedationlists import dramaMovies
+from recommedationlists import animatedMovies
+from recommedationlists import romanceShows
+from recommedationlists import narrativeGames
+from recommedationlists import adventureGames
+from recommedationlists import puzzleGames
+from recommedationlists import rockMusic
+from recommedationlists import popMusic
+from recommedationlists import indieMusic
 
 # lists, dictionaries, and variables for commands
 
@@ -20,8 +31,18 @@ amongUs = ['https://tenor.com/view/among-us-twerk-yellow-ass-thang-gif-18983570'
 uselessWebsites = ['https://www.hackertyper.com/', 'https://onefishstudio.net/ucg', 'https://pointerpointer.com/', 'https://www.boredbutton.com/', 'https://smashthewalls.com/']
 # cute animal
 cuteAnimal = ['https://imgur.com/t/aww/EsVNl3y', 'https://imgur.com/t/aww/OYSoXGx', 'https://imgur.com/t/aww/EKKWq5Q', 'https://imgur.com/t/aww/hBkTtOT']
+# jokes
+dadJokes = []
+funnyJokes = []
+cleverJokes = []
+comedianQuotes = []
+# playlists
+# recommendations
+
+# launching bot
+
 load_dotenv()
-token = os.getenv('')
+token = os.getenv(token)
 
 # prefix 
 prefix = commands.Bot(command_prefix='poop')
@@ -32,13 +53,16 @@ client = discord.Client()
 async def on_ready():
 	print(f'{client.user} has connected to discord!')
 	
-client.run('')
+client.run(token) # leak if dumbass
 
 # message commands trigged using a message
+
 @client.event
 async def on_message(message):
 	if message.author == client.user:
 		return
+	
+	# commands
 	
 	if message.content == 'rate': # from L
 		likeResponseRandom = random.choice(rateResponses) # random choice
@@ -61,6 +85,19 @@ async def on_message(message):
 		await message.channel.send('`ノ ) 　 Lﾉ')
 		# i hate this shit
 	
+	if message.content == 'guess':
+		ifCorrect = True
+		numberGuess = random.randint(0, 100)
+		await message.channel.send('ok, i guessed a number between 0 and 100. guess now: ')
+		if ifCorrect:
+			if message.content == numberGuess:
+				await message.channel.send('great job! you guessed it')
+				ifCorrect = False
+			else:
+				await message.channel.send('whoops, that wasnt it. try again')
+				continue
+	
+	# features 
 		
 	if message.content == 'wallpaper': # from adam
 		await message.channel.send('all of these wallpapers are intented for phones. support for desktop wallpapers are on their way')
@@ -86,6 +123,8 @@ async def on_message(message):
 	if message.content == 'cute':
 		randomAnimal = random.choice(cuteAnimal)
 		await message.channel.send(randomAnimal)
+		
+	if message.content == 'jokes':
 		
 	if message.content == 'credits':
 		await message.channel.send('here are all of the cool people who gave ideas to the bot: ',
