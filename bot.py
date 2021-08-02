@@ -7,17 +7,14 @@ from dotenv import load_dotenv # other discord stuff
 from discord.ext import commands # more discord stuff :zany_face:
 # for the recommendation feature (importing from recommendationlists.py)
 from recommedationlists import romanceMovies
-from recommedationlists import dramaMovies
 from recommedationlists import animatedMovies
 from recommedationlists import comedyShows
-from recommedationlists import romanceShows
-from recommedationlists import dramaShows
-from recommedationlists import narrativeGames
-from recommedationlists import adventureGames
-from recommedationlists import puzzleGames
+from recommedationlists import cartoonShows
 from recommedationlists import rockMusic
-from recommedationlists import popMusic
-from recommedationlists import indieMusic
+from recommedationlists import alternativeMuic
+from recommedationlists import popAlbums
+from recommedationlists import indieAlbums
+from recommedationlists import rnbAlbums
 
 # lists, dictionaries, and variables for commands
 
@@ -27,6 +24,11 @@ rateResponses = ['me likey', 'me no likey']
 landscapeWallpaper = ['https://imgur.com/a/SsRbe8U', 'https://imgur.com/a/Qslcgi3', 'https://imgur.com/a/xD9luhv']
 appleWallpaper = ['https://imgur.com/a/sDKkSPV', 'https://imgur.com/a/Lw4bc8T', 'https://imgur.com/a/LFBxJw3']
 animeWallpaper = ['https://imgur.com/a/MEnmivv', 'https://imgur.com/a/L1fwQyh', 'https://imgur.com/a/ibNeh4']
+cityWallpper = ['https://imgur.com/a/LBUviZT', 'https://imgur.com/a/hxcjPjO', 'https://imgur.com/a/16t7AYu']
+spaceWallpaper = ['https://imgur.com/a/eujV4dv', 'https://imgur.com/a/0yxdPlp', 'https://imgur.com/a/KxmsLhM']
+colorWallpaper = ['https://imgur.com/a/dEYjCyT', 'https://imgur.com/a/M5eqvsj', 'https://imgur.com/a/LE96HIs']
+prideWallpaper = ['https://imgur.com/a/LyQtx5f', 'https://imgur.com/a/yKy3uP8', 'https://imgur.com/a/YAbmrGV']
+illustrationWallpaper = ['https://imgur.com/a/2TWHDkz', 'https://imgur.com/a/wRSe6oR', 'https://imgur.com/a/wRSe6oR']
 # among us
 amongUs = ['https://tenor.com/view/among-us-twerk-yellow-ass-thang-gif-18983570', 'https://imgur.com/a/VMmL45B', 'https://imgur.com/a/o1tlY0O', 'https://imgur.com/a/x58bHsf']
 # useless net
@@ -96,8 +98,8 @@ async def on_message(message):
 	# features 
 		
 	if message.content == 'wallpaper': # from adam
-		await message.channel.send('all of these wallpapers are intented for phones. support for desktop wallpapers are on their way')
-		await message.channel.send('avaliable categories: anime, apple, and landscape')
+		await message.channel.send('all of these wallpapers are intented for phones. support for desktop wallpapers are on their way', 
+			'avaliable categories: anime, apple, landscape, cityscape, space, color, pride or illustration?')
 		if message.content == 'landscape':
 			randomLandscape = random.choice(landscapeWallpaper)
 			await message.channel.send(randomLandscape)
@@ -107,6 +109,21 @@ async def on_message(message):
 		if message.content == 'anime':
 			randomAnime = random.choice(animeWallpaper)
 			await message.channel.send(randomAnime)
+		if message.content == 'cityscape':
+			randomCityscape = random.choice(cityWallpper)
+			await message.channel.send(randomCityscape)
+		if message.content == 'space':
+			randomSpace = random.choice(spaceWallpaper)
+			await message.channel.send(randomSpace)
+		if message.content == 'color':
+			randomColor = random.choice(colorWallpaper)
+			await message.channel.send(randomColor)
+		if message.content == 'pride':
+			randomPride = random.choice(prideWallpaper)
+			await message.channel.send(randomPride)
+		if message.content == ' illustration':
+			randomllustration = random.choie(illustrationWallpaper)
+			await message.channel.send(randomllustration)
 			
 	if message.content == 'among us': # from dj
 		randomAmogUs = random.choice(amongUs)
@@ -127,45 +144,36 @@ async def on_message(message):
 			if message.content == 'romance':
 				randomRomance = random.choice(romanceMovies)
 				await message.channel.send(randomRomance)
-			if message.content == 'drama':
-				randomDrama = random.choice(dramaMovies)
-				await message.channel.send(randomDrama)
 			if message.content == 'animated':
 				randomAnimated = random.choice(animatedMovies)
 				await message.channel.send(randomAnimated)
 		if message.content == 'tv show':
 			await message.channel.send('which would you like: romance, comedy, drama')
-			if message.content == 'romance':
-				randomRomanceTV = random.choice(romanceShows)
-				await message.channel.send(randomRomanceTV)
 			if message.content == 'comedy':
 				randomComedyTV = random.choice(comedyShows)
 				await message.channel.send(randomComedyTV)
-			if message.content == 'drama':
-				randomDramaTV = random.choice(dramaShows)
-				await message.channel.send(randomDramaTV)
-		if message.content == 'game':
-			await message.channel.send('which would you like: narrative, adventure, or puzzle?')
-			if message.content == 'narrative':
-				randomNarrative = random.choice(narrativeGames)
-				await message.channel.send(randomNarrative)
-			if message.content == 'adventure':
-				randomAdventure = random.choice(adventureGames)
-				await message.channel.send(randomAdventure)
-			if message.content == 'puzzle':
-				randomPuzzle = random.choice(puzzleGames)
-				await message.channel.send(randomPuzzle)
+			if message.content == 'cartoon':
+				randomCartoon = random.choice(cartoonShows)
+				await message.channel.send(randomCartoon)
 		if message.content == 'artist':
 			await message.channel.send('which would you like: rock, pop, or indie?')
 			if message.content == 'rock':
 				randomRock = random.choice(rockMusic)
 				await message.channel.send(randomRock)
+			if message.content == 'alternative':
+				randomAlt = random.choice(alternativeMuic)
+				await message.channel.send(randomAlt)
+		if message.content == 'album':
+			await message.channel.send('which would you like: pop, indie, or R&B?')
 			if message.content == 'pop':
-				randomPop = random.choice(popMusic)
+				randomPop = random.choice(popAlbums)
 				await message.channel.send(randomPop)
 			if message.content == 'indie':
-				randomIndie = random.choice(indieMusic)
+				randomIndie = random.choice(indieAlbums)
 				await message.channel.send(randomIndie)
+			if message.content == 'R&B':
+				randomRNB = random.choice(rnbAlbums)
+				await message.channel.send(randomRNB)
 
 	if message.content == 'playlist':
 		randomPlaylist = random.choice(playlists)
@@ -177,4 +185,3 @@ async def on_message(message):
 	if message.content == 'credits':
 		await message.channel.send('here are all of the cool people who gave ideas to the bot: ',
 					   'https://github.com/julianagar/Poop-Bot/blob/main/README.md')
-	
