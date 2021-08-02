@@ -11,3 +11,4 @@ all of the cool people who contributed ideas to this project
 - jericho 
 - L
 - [jaymel and gerald](https://github.com/itslemony/gerald)
+- dj
