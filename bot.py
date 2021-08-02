@@ -9,7 +9,9 @@ from discord.ext import commands # more discord stuff :zany_face:
 from recommedationlists import romanceMovies
 from recommedationlists import dramaMovies
 from recommedationlists import animatedMovies
+from recommedationlists import comedyShows
 from recommedationlists import romanceShows
+from recommedationlists import dramaShows
 from recommedationlists import narrativeGames
 from recommedationlists import adventureGames
 from recommedationlists import puzzleGames
@@ -37,6 +39,7 @@ funnyJokes = []
 cleverJokes = []
 comedianQuotes = []
 # playlists
+playlists = ['https://open.spotify.com/playlist/283WZvKuACszj3K0xyId4V?si=pqjTqhj4R6iqzlPFWvyo7A&dl_branch=1', 'https://open.spotify.com/playlist/0dVAtxbrA56wsgxuP7XKMe?si=Guq-iHRiTLWGtckMUxXtfg&dl_branch=1', 'https://open.spotify.com/playlist/6pwwwIa0kX1nooQBn5InpB?si=0e9553d7807d4677']
 # recommendations
 
 # launching bot
@@ -89,7 +92,7 @@ async def on_message(message):
 		ifCorrect = True
 		numberGuess = random.randint(0, 100)
 		await message.channel.send('ok, i guessed a number between 0 and 100. guess now: ')
-		if ifCorrect:
+		while ifCorrect:
 			if message.content == numberGuess:
 				await message.channel.send('great job! you guessed it')
 				ifCorrect = False
@@ -123,8 +126,60 @@ async def on_message(message):
 	if message.content == 'cute':
 		randomAnimal = random.choice(cuteAnimal)
 		await message.channel.send(randomAnimal)
-		
-	if message.content == 'jokes':
+
+	if message.content == 'recommendations':
+		await message.channel.send('what would you like: a movie, tv show, video game, or music artist?')
+		if message.content == 'movie':
+			await message.channel.send('which would you like: romance, drama, or animated')
+			if message.content == 'romance':
+				randomRomance = random.choice(romanceMovies)
+				await message.channel.send(randomRomance)
+			if message.content == 'drama':
+				randomDrama = random.choice(dramaMovies)
+				await message.channel.send(randomDrama)
+			if message.content == 'animated':
+				randomAnimated = random.choice(animatedMovies)
+				await message.channel.send(randomAnimated)
+		if message.content == 'tv show':
+			await message.channel.send('which would you like: romance, comedy, drama')
+			if message.content == 'romance':
+				randomRomanceTV = random.choice(romanceShows)
+				await message.channel.send(randomRomanceTV)
+			if message.content == 'comedy':
+				randomComedyTV = random.choice(comedyShows)
+				await message.channel.send(randomComedyTV)
+			if message.content == 'drama':
+				randomDramaTV = random.choice(dramaShows)
+				await message.channel.send(randomDramaTV)
+		if message.content == 'game':
+			await message.channel.send('which would you like: narrative, adventure, or puzzle?')
+			if message.content == 'narrative':
+				randomNarrative = random.choice(narrativeGames)
+				await message.channel.send(randomNarrative)
+			if message.content == 'adventure':
+				randomAdventure = random.choice(adventureGames)
+				await message.channel.send(randomAdventure)
+			if message.content == 'puzzle':
+				randomPuzzle = random.choice(puzzleGames)
+				await message.channel.send(randomPuzzle)
+		if message.content == 'artist':
+			await message.channel.send('which would you like: rock, pop, or indie?')
+			if message.content == 'rock':
+				randomRock = random.choice(rockMusic)
+				await message.channel.send(randomRock)
+			if message.content == 'pop':
+				randomPop = random.choice(popMusic)
+				await message.channel.send(randomPop)
+			if message.content == 'indie':
+				randomIndie = random.choice(indieMusic)
+				await message.channel.send(randomIndie)
+
+	if message.content == 'playlist':
+		randomPlaylist = random.choice(playlists)
+		await message.channel.send(randomPlaylist)
+
+	if message.content == 'submit':
+		await message.channel.send('submit stuff here: https://forms.gle/jz4bemZKgjj4d1oWA')
 		
 	if message.content == 'credits':
 		await message.channel.send('here are all of the cool people who gave ideas to the bot: ',
