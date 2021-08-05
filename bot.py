@@ -38,7 +38,7 @@ popAlbums = ['Happier than Ever: https://bit.ly/3yjMdJv', 'Planet Her: https://b
 indieAlbums = ['Sling: https://bit.ly/3iksXpM', 'Jubilee: https://bit.ly/3jl9F34']
 rnbAlbums = ['Ctrl: https://bit.ly/3fGqPan', "When It's All Said And Done... Take Time: https://bit.ly/3zX5il6"]
 # jokes 
-jokes = ['look in the mirrror', 'what did the fridge say to the toaster? ||nothing at all, they cant talk lmfao||', 'how do you put an elephant in the fridge? || you open the door, put the elephant in, and close the door||"]
+jokes = ['look in the mirrror', 'what did the fridge say to the toaster? ||nothing at all, they cant talk lmfao||', 'how do you put an elephant in the fridge? || you open the door, put the elephant in, and close the door||']
 
 # bot running stuff 
 
@@ -136,7 +136,7 @@ async def on_message(message):
         
     if message.content == '?recommendations':
         await message.channel.send('what would you like: a movie, tv show, video game, or music artist?')
-	await message.channel.send('do ?(catergory)')
+        await message.channel.send('do ?(catergory)')
         
     if message.content == '?movie':
         await message.channel.send('which would you like: romance, drama, or animated?')
@@ -152,7 +152,7 @@ async def on_message(message):
               
     if message.content == '?tv show':
         await message.channel.send('which would you like: romance, comedy, drama, anime')
-	await message.channel.send('do ?tv (catergory)')
+        await message.channel.send('do ?tv (catergory)')
           
     if message.content == '?tv comedy':
         randomComedyTV = random.choice(comedyShows)
@@ -162,53 +162,53 @@ async def on_message(message):
         randomCartoon = random.choice(cartoonShows)
         await message.channel.send(randomCartoon)
 
-	if message.content == '?tv anime':
-		randomAnime = random.choice(animeShows)
-        await message.channel.send(randomAnime)
-	
-	if message.content == '?tv drama':
-		randomDrama = random.choice(dramaShows)
-		await message.channel.send(randomDrama)
+    if message.content == '?tv anime':
+      randomAnime = random.choice(animeShows)
+      await message.channel.send(randomAnime)
+
+    if message.content == '?tv drama':
+      randomDrama = random.choice(dramaShows)
+      await message.channel.send(randomDrama)
 
     if message.content == '?artist':
-        await message.channel.send('which would you like: rock, pop, or indie?')
-		await message.channel.send('do ?artist (catergory)')
-				  
+      await message.channel.send('which would you like: rock, pop, or indie?')
+      await message.channel.send('do ?artist (catergory)')
+
     if message.content == '?art rock':
-        randomRock = random.choice(rockMusic)
-        await message.channel.send(randomRock)
+      randomRock = random.choice(rockMusic)
+      await message.channel.send(randomRock)
         
     if message.content == '?art alternative':
-        randomAlt = random.choice(alternativeMuic)
-        await message.channel.send(randomAlt)
+      randomAlt = random.choice(alternativeMuic)
+      await message.channel.send(randomAlt)
           
     if message.content == '?album':
-        await message.channel.send('which would you like: pop, indie, or R&B?')
-		await message.channel.send('do ?album (catergory)')
+      await message.channel.send('which would you like: pop, indie, or R&B?')
+      await message.channel.send('do ?album (catergory)')
         
     if message.content == '?album pop':
-        randomPop = random.choice(popAlbums)
-        await message.channel.send(randomPop)
+      randomPop = random.choice(popAlbums)
+      await message.channel.send(randomPop)
           
     if message.content == '?album indie':
-        randomIndie = random.choice(indieAlbums)
-        await message.channel.send(randomIndie)
+      randomIndie = random.choice(indieAlbums)
+      await message.channel.send(randomIndie)
           
     if message.content == '?album R&B':
-        randomRNB = random.choice(rnbAlbums)
-        await message.channel.send(randomRNB)
+      randomRNB = random.choice(rnbAlbums)
+      await message.channel.send(randomRNB)
         
     if message.content == '?submit':
-        await message.channel.send('submit stuff here: https://forms.gle/jz4bemZKgjj4d1oWA')
+      await message.channel.send('submit stuff here: https://forms.gle/jz4bemZKgjj4d1oWA')
           
     if message.content == '?credits':
-        await message.channel.send('here are all of the cool people who gave ideas to the bot: https://github.com/julianagar/Poop-Bot/blob/main/README.md')
+      await message.channel.send('here are all of the cool people who gave ideas to the bot: https://github.com/julianagar/Poop-Bot/blob/main/README.md')
 
     if message.content == '?website':
-        await message.channel.send('https://julianagar.carrd.co/#poop-bot')
+      await message.channel.send('https://julianagar.carrd.co/#poop-bot')
 
     if message.content == '?server':
-        await message.channel.send('https://discord.gg/bq6ZuHVaHV')
+      await message.channel.send('https://discord.gg/bq6ZuHVaHV')
         
         
 # more bot running stuff 
