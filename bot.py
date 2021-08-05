@@ -24,12 +24,13 @@ uselessWebsites = ['https://www.hackertyper.com/', 'https://onefishstudio.net/uc
 cuteAnimal = ['https://imgur.com/t/aww/EsVNl3y', 'https://imgur.com/t/aww/OYSoXGx', 'https://imgur.com/t/aww/EKKWq5Q', 'https://imgur.com/t/aww/hBkTtOT']
 # recommendations kept here and not in bot.py so it doesnt fill up the whole thing
 romanceMovies = ['Crounching Tiger, Hidden Dragon: https://bit.ly/3inx1Wx', 'Call Me by Your Name: https://imdb.to/3xjfsL6']
-animatedMovies = ['Luca: https://bit.ly/3yk6y1f', "Howl's Moving Castle: https://imdb.to/3jgHWQY", 'Your Name.: https://imdb.to/37khqk1']
+animatedMovies = ['Luca: https://bit.ly/3yk6y1f', "Howl's Moving Castle: https://imdb.to/3jgHWQY", 'Your Name.: https://imdb.to/37khqk1', 'The Emoji Movie: https://imdb.to/3iqvOgW']
 comedyMovies = ['John Mulaney: Kid Gorgeous: https://imdb.to/2TVtSDR', 'Bo Burnham: Inside: https://imdb.to/3CqZJh8']
 # shows 
-cartoonShows = ['The Amazing World of Gumball: https://imdb.to/3iiK5w7', 'Lazor Wulf: https://imdb.to/3fnNmZd']
-comedyShows = ['Tuca & Bertie: https://imdb.to/3ydQ8HT', 'Schmigadoon: https://imdb.to/3lns2a3']
+cartoonShows = ['The Amazing World of Gumball: https://imdb.to/3iiK5w7', 'Lazor Wulf: https://imdb.to/3fnNmZd', 'Tuca & Bertie: https://imdb.to/3ydQ8HT']
+comedyShows = ['Shrill: https://imdb.to/3fyjFoq', 'Schmigadoon: https://imdb.to/3lns2a3']
 animeShows = ['One Piece: https://imdb.to/3imsmUr', 'Rascal Does Not Dream of Bunny Girl Senpai: https://imdb.to/3A25i3w']
+dramaShows = ['Money Heist: https://imdb.to/3lxwK59', 'The Morning Show: https://imdb.to/3xpL7L8']
 # music genres 
 rockMusic = ['day6: https://bit.ly/3ig3cH6']
 alternativeMuic = ['Joji: https://bit.ly/3A0Op9b', 'Rex Orange County: https://bit.ly/2Vi61Pl']
@@ -37,6 +38,8 @@ alternativeMuic = ['Joji: https://bit.ly/3A0Op9b', 'Rex Orange County: https://b
 popAlbums = ['Happier than Ever: https://bit.ly/3yjMdJv', 'Planet Her: https://bit.ly/3jeaA5h']
 indieAlbums = ['Sling: https://bit.ly/3iksXpM', 'Jubilee: https://bit.ly/3jl9F34']
 rnbAlbums = ['Ctrl: https://bit.ly/3fGqPan', "When It's All Said And Done... Take Time: https://bit.ly/3zX5il6"]
+# jokes 
+jokes = ['look in the mirrror', 'what did the fridge say to the toaster? ||nothing at all, they cant talk lmfao||', 'how do you put an elephant in the fridge? || you open the door, put the elephant in, and close the door||"]
 
 # bot running stuff 
 
@@ -130,11 +133,11 @@ async def on_message(message):
         randomCute = random.choice(cuteAnimal)
         await message.channel.send(randomCute)
         
-        
     # recommendation cluster fuck
         
     if message.content == '?recommendations':
         await message.channel.send('what would you like: a movie, tv show, video game, or music artist?')
+	await message.channel.send('do ?(catergory)
         
     if message.content == '?movie':
         await message.channel.send('which would you like: romance, drama, or animated?')
@@ -149,7 +152,8 @@ async def on_message(message):
         await message.channel.send(randomAnimated)
               
     if message.content == '?tv show':
-        await message.channel.send('which would you like: romance, comedy, drama')
+        await message.channel.send('which would you like: romance, comedy, drama, anime')
+	await message.channel.send('do ?tv (catergory')
           
     if message.content == '?tv comedy':
         randomComedyTV = random.choice(comedyShows)
@@ -161,6 +165,7 @@ async def on_message(message):
         
     if message.content == '?artist':
         await message.channel.send('which would you like: rock, pop, or indie?')
+				  
             
     if message.content == '?art rock':
         randomRock = random.choice(rockMusic)
