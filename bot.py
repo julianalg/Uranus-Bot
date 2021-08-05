@@ -2,7 +2,6 @@ import os
 import discord
 import random
 from discord.ext import commands
-
 # rate responses
 rateResponses = ['me likey', 'me no likey']
 # wallpapers
@@ -137,7 +136,7 @@ async def on_message(message):
         
     if message.content == '?recommendations':
         await message.channel.send('what would you like: a movie, tv show, video game, or music artist?')
-	await message.channel.send('do ?(catergory)
+	await message.channel.send('do ?(catergory)')
         
     if message.content == '?movie':
         await message.channel.send('which would you like: romance, drama, or animated?')
@@ -153,7 +152,7 @@ async def on_message(message):
               
     if message.content == '?tv show':
         await message.channel.send('which would you like: romance, comedy, drama, anime')
-	await message.channel.send('do ?tv (catergory')
+	await message.channel.send('do ?tv (catergory)')
           
     if message.content == '?tv comedy':
         randomComedyTV = random.choice(comedyShows)
@@ -162,11 +161,19 @@ async def on_message(message):
     if message.content == '?tv cartoon':
         randomCartoon = random.choice(cartoonShows)
         await message.channel.send(randomCartoon)
-        
+
+	if message.content == '?tv anime':
+		randomAnime = random.choice(animeShows)
+        await message.channel.send(randomAnime)
+	
+	if message.content == '?tv drama':
+		randomDrama = random.choice(dramaShows)
+		await message.channel.send(randomDrama)
+
     if message.content == '?artist':
         await message.channel.send('which would you like: rock, pop, or indie?')
+		await message.channel.send('do ?artist (catergory)')
 				  
-            
     if message.content == '?art rock':
         randomRock = random.choice(rockMusic)
         await message.channel.send(randomRock)
@@ -177,6 +184,7 @@ async def on_message(message):
           
     if message.content == '?album':
         await message.channel.send('which would you like: pop, indie, or R&B?')
+		await message.channel.send('do ?album (catergory)')
         
     if message.content == '?album pop':
         randomPop = random.choice(popAlbums)
