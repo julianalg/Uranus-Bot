@@ -22,16 +22,21 @@ amongUs = ['https://tenor.com/view/among-us-twerk-yellow-ass-thang-gif-18983570'
 uselessWebsites = ['https://www.hackertyper.com/', 'https://onefishstudio.net/ucg', 'https://pointerpointer.com/', 'https://www.boredbutton.com/', 'https://smashthewalls.com/']
 # cute animal
 cuteAnimal = ['https://imgur.com/t/aww/EsVNl3y', 'https://imgur.com/t/aww/OYSoXGx', 'https://imgur.com/t/aww/EKKWq5Q', 'https://imgur.com/t/aww/hBkTtOT']
-# recommendations (depends on recommendationlists.py)
-from recommedationlists import romanceMovies
-from recommedationlists import animatedMovies
-from recommedationlists import comedyShows
-from recommedationlists import cartoonShows
-from recommedationlists import rockMusic
-from recommedationlists import alternativeMuic
-from recommedationlists import popAlbums
-from recommedationlists import indieAlbums
-from recommedationlists import rnbAlbums
+# recommendations kept here and not in bot.py so it doesnt fill up the whole thing
+romanceMovies = ['Crounching Tiger, Hidden Dragon: https://bit.ly/3inx1Wx', 'Call Me by Your Name: https://imdb.to/3xjfsL6']
+animatedMovies = ['Luca: https://bit.ly/3yk6y1f', "Howl's Moving Castle: https://imdb.to/3jgHWQY", 'Your Name.: https://imdb.to/37khqk1']
+comedyMovies = ['John Mulaney: Kid Gorgeous: https://imdb.to/2TVtSDR', 'Bo Burnham: Inside: https://imdb.to/3CqZJh8']
+# shows 
+cartoonShows = ['The Amazing World of Gumball: https://imdb.to/3iiK5w7', 'Lazor Wulf: https://imdb.to/3fnNmZd']
+comedyShows = ['Tuca & Bertie: https://imdb.to/3ydQ8HT', 'Schmigadoon: https://imdb.to/3lns2a3']
+animeShows = ['One Piece: https://imdb.to/3imsmUr', 'Rascal Does Not Dream of Bunny Girl Senpai: https://imdb.to/3A25i3w']
+# music genres 
+rockMusic = ['day6: https://bit.ly/3ig3cH6']
+alternativeMuic = ['Joji: https://bit.ly/3A0Op9b', 'Rex Orange County: https://bit.ly/2Vi61Pl']
+# albums
+popAlbums = ['Happier than Ever: https://bit.ly/3yjMdJv', 'Planet Her: https://bit.ly/3jeaA5h']
+indieAlbums = ['Sling: https://bit.ly/3iksXpM', 'Jubilee: https://bit.ly/3jl9F34']
+rnbAlbums = ['Ctrl: https://bit.ly/3fGqPan', "When It's All Said And Done... Take Time: https://bit.ly/3zX5il6"]
 
 # bot running stuff 
 
@@ -75,7 +80,7 @@ async def on_message(message):
     if message.content == '?wallpaper': # from adam
         await message.channel.send('all of these wallpapers are intented for phones. support for desktop wallpapers are on their way') 
         await message.channel.send('avaliable categories: anime, apple, landscape, cityscape, space, color, pride or illustration?')
-        await message.channel.send('do "?wp (then the catergory you want)')
+        await message.channel.send('do "?wp (then the catergory you want)"')
         
     if message.content == '?wp landscape':
         randomLandscape = random.choice(landscapeWallpaper)
@@ -180,11 +185,17 @@ async def on_message(message):
         randomRNB = random.choice(rnbAlbums)
         await message.channel.send(randomRNB)
         
-    if message.content == 'submit':
+    if message.content == '?submit':
         await message.channel.send('submit stuff here: https://forms.gle/jz4bemZKgjj4d1oWA')
           
-    if message.content == 'credits':
+    if message.content == '?credits':
         await message.channel.send('here are all of the cool people who gave ideas to the bot: https://github.com/julianagar/Poop-Bot/blob/main/README.md')
+
+    if message.content == '?website':
+        await message.channel.send('https://julianagar.carrd.co/#poop-bot')
+
+    if message.content == '?server':
+        await message.channel.send('https://discord.gg/bq6ZuHVaHV')
         
         
 # more bot running stuff 
@@ -193,4 +204,4 @@ async def on_message(message):
 async def on_message():
     print(message.content)
 			
-bot.run(token)
+bot.run('token')
