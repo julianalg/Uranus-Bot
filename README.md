@@ -13,3 +13,10 @@ all of the cool people who contributed ideas to this project
 - L
 - [jaymel and gerald](https://github.com/itslemony/gerald)
 - dj
+
+beta testers: 
+
+- dylan
+- adam
+- jaymel
+- dj
