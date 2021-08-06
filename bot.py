@@ -2,25 +2,26 @@ import os
 import discord
 import random
 from discord.ext import commands
+
 # rate responses
 rateResponses = ['me likey', 'me no likey']
 # wallpapers
-landscapeWallpaper = ['https://imgur.com/a/SsRbe8U', 'https://imgur.com/a/Qslcgi3', 'https://imgur.com/a/xD9luhv']
-appleWallpaper = ['https://imgur.com/a/sDKkSPV', 'https://imgur.com/a/Lw4bc8T', 'https://imgur.com/a/LFBxJw3']
-animeWallpaper = ['https://imgur.com/a/MEnmivv', 'https://imgur.com/a/L1fwQyh', 'https://imgur.com/a/ibNeh4']
-cityWallpper = ['https://imgur.com/a/LBUviZT', 'https://imgur.com/a/hxcjPjO', 'https://imgur.com/a/16t7AYu']
+landscapeWallpaper = ['https://imgur.com/a/SsRbe8U', 'https://imgur.com/a/Qslcgi3', 'https://imgur.com/a/xD9luhv', 'https://media.discordapp.net/attachments/872928261510934618/873010537976430612/5c3fd9952bbd0235c4911da8d9fdac5e.webp?width=299&height=532', 'https://media.discordapp.net/attachments/872928261510934618/873010564102750279/photo-1501786223405-6d024d7c3b8d.jpeg?width=355&height=532']
+appleWallpaper = ['https://imgur.com/a/sDKkSPV', 'https://imgur.com/a/Lw4bc8T', 'https://imgur.com/a/LFBxJw3', 'https://media.discordapp.net/attachments/872928261510934618/873010512957423667/papers.co-sd03-classic-mac-space-apple-blur-34-iphone6-plus-wallpaper.jpg?width=299&height=532', 'https://media.discordapp.net/attachments/872928261510934618/873010538303619142/vng9P7.jpg?width=399&height=532']
+animeWallpaper = ['https://imgur.com/a/MEnmivv', 'https://imgur.com/a/L1fwQyh', 'https://imgur.com/a/ibNeh4', 'https://media.discordapp.net/attachments/872928261510934618/873009365584605184/6a40c3cc24d76ff479e0026c4b95443d.jpg?width=299&height=532', 'https://media.discordapp.net/attachments/872928261510934618/873009367983747182/6338.jpg?width=299&height=532', 'https://media.discordapp.net/attachments/872928261510934618/873009366666706994/anime-scenery-sunset-uhdpaper.com-4K-112.jpg?width=299&height=532', 'https://media.discordapp.net/attachments/872928261510934618/873009367937581126/wp4805654.jpg?width=246&height=532']
+cityWallpper = ['https://imgur.com/a/LBUviZT', 'https://imgur.com/a/hxcjPjO', 'https://imgur.com/a/16t7AYu', 'https://media.discordapp.net/attachments/872928261510934618/873009360899543060/photo-1496871455396-14e56815f1f4.jpeg?width=338&height=533']
 spaceWallpaper = ['https://imgur.com/a/eujV4dv', 'https://imgur.com/a/0yxdPlp', 'https://imgur.com/a/KxmsLhM']
-colorWallpaper = ['https://imgur.com/a/dEYjCyT', 'https://imgur.com/a/M5eqvsj', 'https://imgur.com/a/LE96HIs']
-prideWallpaper = ['https://imgur.com/a/LyQtx5f', 'https://imgur.com/a/yKy3uP8', 'https://imgur.com/a/YAbmrGV']
-illustrationWallpaper = ['https://imgur.com/a/2TWHDkz', 'https://imgur.com/a/wRSe6oR', 'https://imgur.com/a/wRSe6oR']
+colorWallpaper = ['https://imgur.com/a/dEYjCyT', 'https://imgur.com/a/M5eqvsj', 'https://imgur.com/a/LE96HIs', 'https://media.discordapp.net/attachments/872928261510934618/873009115197231104/Gradient-Background-Wallpaper-001-300x585.jpg?width=225&height=439', 'https://media.discordapp.net/attachments/872928261510934618/873009114761035886/wp4464892.jpg?width=299&height=532']
+prideWallpaper = ['https://imgur.com/a/LyQtx5f', 'https://imgur.com/a/yKy3uP8', 'https://imgur.com/a/YAbmrGV', 'https://media.discordapp.net/attachments/872928261510934618/873009355522461706/pride-month-flag-pattern-gocase.jpg?width=259&height=533', ]
+illustrationWallpaper = ['https://imgur.com/a/2TWHDkz', 'https://imgur.com/a/wRSe6oR', 'https://imgur.com/a/wRSe6oR', 'https://media.discordapp.net/attachments/872928261510934618/873009108419244112/2847850.jpg?width=246&height=533', 'https://cdn.discordapp.com/attachments/872928261510934618/873009110197628928/6e525c1189a9733d7614ba7c4b554ed2.jpg', 'https://media.discordapp.net/attachments/872928261510934618/873009109891440720/wp5098525.jpg?width=299&height=532', 'https://media.discordapp.net/attachments/872928261510934618/873009112286392370/1172024.jpg?width=266&height=533', ]
 # playlist
-playlists = ['https://open.spotify.com/playlist/283WZvKuACszj3K0xyId4V?si=pqjTqhj4R6iqzlPFWvyo7A&dl_branch=1', 'https://open.spotify.com/playlist/0dVAtxbrA56wsgxuP7XKMe?si=Guq-iHRiTLWGtckMUxXtfg&dl_branch=1', 'https://open.spotify.com/playlist/6pwwwIa0kX1nooQBn5InpB?si=0e9553d7807d4677']
+playlists = ['https://open.spotify.com/playlist/283WZvKuACszj3K0xyId4V?si=pqjTqhj4R6iqzlPFWvyo7A&dl_branch=1', 'https://open.spotify.com/playlist/0dVAtxbrA56wsgxuP7XKMe?si=Guq-iHRiTLWGtckMUxXtfg&dl_branch=1', 'https://open.spotify.com/playlist/6pwwwIa0kX1nooQBn5InpB?si=0e9553d7807d4677', 'https://open.spotify.com/playlist/3nBRaDPtYtWJI6TfL8MEoS?si=gpf_bq6VQWCdcnFnQ4uzBA']
 # among us
-amongUs = ['https://tenor.com/view/among-us-twerk-yellow-ass-thang-gif-18983570', 'https://imgur.com/a/VMmL45B', 'https://imgur.com/a/o1tlY0O', 'https://imgur.com/a/x58bHsf']
+amongUs = ['https://tenor.com/view/among-us-twerk-yellow-ass-thang-gif-18983570', 'https://imgur.com/a/VMmL45B', 'https://imgur.com/a/o1tlY0O', 'https://imgur.com/a/x58bHsf', 'https://media.discordapp.net/attachments/872928261510934618/873011151527637032/JermaSus.webp?width=270&height=338', 'https://media.discordapp.net/attachments/872928261510934618/873011163506544691/Among-Us-memes.jpg?width=705&height=353', 'https://cdn.discordapp.com/attachments/872928261510934618/873011174860541982/gpue7yepssp51.jpg', 'https://cdn.discordapp.com/attachments/872928261510934618/873011187065970728/maxresdefault.jpg', 'https://cdn.discordapp.com/attachments/872928261510934618/873011199783096410/4jlqsm.jpg', 'https://cdn.discordapp.com/attachments/872928261510934618/873011263196766238/a6077ef30ba8d41d914549906e3b5533.jpg']
 # useless net
-uselessWebsites = ['https://www.hackertyper.com/', 'https://onefishstudio.net/ucg', 'https://pointerpointer.com/', 'https://www.boredbutton.com/', 'https://smashthewalls.com/']
+uselessWebsites = ['https://www.hackertyper.com/', 'https://onefishstudio.net/ucg', 'https://pointerpointer.com/', 'https://www.boredbutton.com/', 'https://smashthewalls.com/', 'https://mondrianandme.com', 'https://thatsthefinger.com', 'https://puginarug.com', 'https://cant-not-tweet-this.com', 'https://alwaysjudgeabookbyitscover.com',  'https://www.mapcrunch.com/', 'https://www.window-swap.com/Window', 'https://screamintothevoid.com/', 'https://archive.org/details/msdos_Oregon_Trail_The_1990']
 # cute animal
-cuteAnimal = ['https://imgur.com/t/aww/EsVNl3y', 'https://imgur.com/t/aww/OYSoXGx', 'https://imgur.com/t/aww/EKKWq5Q', 'https://imgur.com/t/aww/hBkTtOT']
+cuteAnimal = ['https://imgur.com/t/aww/EsVNl3y', 'https://imgur.com/t/aww/OYSoXGx', 'https://imgur.com/t/aww/EKKWq5Q', 'https://imgur.com/t/aww/hBkTtOT', 'https://imgur.com/t/aww/GWvmwBy', 'https://imgur.com/t/aww/cYOAzQG', 'https://imgur.com/t/aww/PYO3jHw', 'https://imgur.com/t/aww/onaQY4K', 'https://imgur.com/t/aww/9JqesLH', 'https://www.reddit.com/r/aww/comments/oyoksi/the_determined_doggo', 'https://www.reddit.com/r/aww/comments/oyjgtp/thats_too_cute_i_will_die_from_cuteness/']
 # recommendations kept here and not in bot.py so it doesnt fill up the whole thing
 romanceMovies = ['Crounching Tiger, Hidden Dragon: https://bit.ly/3inx1Wx', 'Call Me by Your Name: https://imdb.to/3xjfsL6']
 animatedMovies = ['Luca: https://bit.ly/3yk6y1f', "Howl's Moving Castle: https://imdb.to/3jgHWQY", 'Your Name.: https://imdb.to/37khqk1', 'The Emoji Movie: https://imdb.to/3iqvOgW']
@@ -132,6 +133,10 @@ async def on_message(message):
         randomCute = random.choice(cuteAnimal)
         await message.channel.send(randomCute)
         
+    if message.content == '?jokes':
+        randomJoke = random.choice(jokes)
+        await message.channel.send(randomJoke)
+        
     # recommendation cluster fuck
         
     if message.content == '?recommendations':
@@ -197,6 +202,11 @@ async def on_message(message):
     if message.content == '?album R&B':
       randomRNB = random.choice(rnbAlbums)
       await message.channel.send(randomRNB)
+      
+      
+    # bot info and other stuff
+    
+    
         
     if message.content == '?submit':
       await message.channel.send('submit stuff here: https://forms.gle/jz4bemZKgjj4d1oWA')
@@ -209,7 +219,9 @@ async def on_message(message):
 
     if message.content == '?server':
       await message.channel.send('https://discord.gg/bq6ZuHVaHV')
-        
+      
+    if message.content == '?changelog':
+      await message.channel.send('view the changelog here: https://github.com/julianagar/Poop-Bot/blob/main/changelog.md')
         
 # more bot running stuff 
       
@@ -217,4 +229,4 @@ async def on_message(message):
 async def on_message():
     print(message.content)
 			
-bot.run('token')
+bot.run(token)
