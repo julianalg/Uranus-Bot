@@ -4,7 +4,7 @@ import random
 from discord.ext import commands
 
 # rate responses
-rateResponses = ['me likey', 'me no likey']
+rateResponses = ['me likey', 'me no likey', 'muy bueno']
 # wallpapers
 landscapeWallpaper = ['https://imgur.com/a/SsRbe8U', 'https://imgur.com/a/Qslcgi3', 'https://imgur.com/a/xD9luhv', 'https://media.discordapp.net/attachments/872928261510934618/873010537976430612/5c3fd9952bbd0235c4911da8d9fdac5e.webp?width=299&height=532', 'https://media.discordapp.net/attachments/872928261510934618/873010564102750279/photo-1501786223405-6d024d7c3b8d.jpeg?width=355&height=532']
 appleWallpaper = ['https://imgur.com/a/sDKkSPV', 'https://imgur.com/a/Lw4bc8T', 'https://imgur.com/a/LFBxJw3', 'https://media.discordapp.net/attachments/872928261510934618/873010512957423667/papers.co-sd03-classic-mac-space-apple-blur-34-iphone6-plus-wallpaper.jpg?width=299&height=532', 'https://media.discordapp.net/attachments/872928261510934618/873010538303619142/vng9P7.jpg?width=399&height=532']
@@ -40,6 +40,10 @@ indieAlbums = ['Sling: https://bit.ly/3iksXpM', 'Jubilee: https://bit.ly/3jl9F34
 rnbAlbums = ['Ctrl: https://bit.ly/3fGqPan', "When It's All Said And Done... Take Time: https://bit.ly/3zX5il6"]
 # jokes 
 jokes = ['look in the mirrror', 'what did the fridge say to the toaster? ||nothing at all, they cant talk lmfao||', 'how do you put an elephant in the fridge? || you open the door, put the elephant in, and close the door||']
+# cs asking
+csResponseQuestions = ['ask L instead', 'therapy is always an option', 'maybe if you stanned nct you’d find the answer', 'ask @CarlSuburbs on twitter', 'yes, 100%, i can’t stress this enough, absolutely, for sure, no doubt', 'stop. baby don’t stop.', 'There is no such thing as a coincidence. The fact that you have asked me this means that we are energetically and spiritually aligned.']
+# tasks
+tasks = ['clean bedroom', 'clear out email inbox', 're-do phone home screen', 'change your wallpapers (tip: ?wallpaper)', 'go on a walk or stretch', 'say good morning/afternoon/evening/night or check up on a friend', "sort and sell things you don't need", "contribute ideas to the bot (?submit)"]
 
 # bot running stuff 
 
@@ -55,16 +59,15 @@ async def on_message(message):
     if message.author == bot.user:
         return
     if message.author.bot: return
-    
+  
     if message.content == '?test':
         await message.channel.send('test message!')
 
-    if message.content == '?rate': # from L
+    if message.content.startswith('?rate'): # from L
         likeResponseRandom = random.choice(rateResponses) # random choice
         await message.channel.send(likeResponseRandom) 
-
-    if message.content == '?dance': # from jericho (i will cry if this code does not work probably)
-        await message.channel.send('(_＼ヽ') 
+      
+    if message.content == '?dance':
         await message.channel.send('　 ＼＼ .Λ＿Λ.')
         await message.channel.send('　　 ＼(　ˇωˇ)')
         await message.channel.send('　　　 >　⌒ヽ')
@@ -78,10 +81,46 @@ async def on_message(message):
         await message.channel.send('　| 丿 ＼ ⌒)')
         await message.channel.send('　| |　　) /')
         await message.channel.send('`ノ ) 　 Lﾉ')
+        
+    if message.content.startswith('?ask carl'):
+          randomCarl = random.choice(csResponseQuestions)
+          await message.channel.send(randomCarl)
+        
+    if message.content == '?playlist':
+      randomPlaylist = random.choice(playlists)
+      await message.channel.send(randomPlaylist)
+  
+    if message.content == '?among us': # from dj
+      randomAmogUs = random.choice(amongUs)
+      await message.channel.send(randomAmogUs)
+    
+    if message.content == '?useless':
+      randomUseless = random.choice(uselessWebsites)
+      await message.channel.send(randomUseless)
+  
+    if message.content == '?cute':
+      randomCute = random.choice(cuteAnimal)
+      await message.channel.send(randomCute)
+  
+    if message.content == '?jokes':
+      randomJoke = random.choice(jokes)
+      await message.channel.send(randomJoke)
+      
+    if message.content == '?task':
+      randomTasks = random.choice(tasks)
+      await message.channel.send(randomTasks)
 
-   
+
+    # wallpaper
+    
+    
     if message.content == '?wallpaper': # from adam
-        await message.channel.send('all of these wallpapers are intented for phones. support for desktop wallpapers are on their way') 
+        await message.channel.send('all of these wallpapers are intended for phones. support for desktop wallpapers are on their way') 
+        await message.channel.send('avaliable categories: anime, apple, landscape, cityscape, space, color, pride or illustration?')
+        await message.channel.send('do "?wp (then the catergory you want)"')
+        
+    if message.content == '?wp': # from adam
+        await message.channel.send('all of these wallpapers are intended for phones. support for desktop wallpapers are on their way') 
         await message.channel.send('avaliable categories: anime, apple, landscape, cityscape, space, color, pride or illustration?')
         await message.channel.send('do "?wp (then the catergory you want)"')
         
@@ -116,28 +155,10 @@ async def on_message(message):
     if message.content == '?wp illustration':
         randomllustration = random.choice(illustrationWallpaper)
         await message.channel.send(randomllustration)
-
-    if message.content == '?playlist':
-        randomPlaylist = random.choice(playlists)
-        await message.channel.send(randomPlaylist)
-
-    if message.content == '?among us': # from dj
-        randomAmogUs = random.choice(amongUs)
-        await message.channel.send(randomAmogUs)
-		
-    if message.content == '?useless':
-        randomUseless = random.choice(uselessWebsites)
-        await message.channel.send(randomUseless)
-
-    if message.content == '?cute':
-        randomCute = random.choice(cuteAnimal)
-        await message.channel.send(randomCute)
         
-    if message.content == '?jokes':
-        randomJoke = random.choice(jokes)
-        await message.channel.send(randomJoke)
         
     # recommendation cluster fuck
+        
         
     if message.content == '?recommendations':
         await message.channel.send('what would you like: a movie, tv show, video game, or music artist?')
@@ -205,7 +226,6 @@ async def on_message(message):
       
       
     # bot info and other stuff
-    
     
         
     if message.content == '?submit':
