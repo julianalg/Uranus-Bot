@@ -1,5 +1,5 @@
 # Poop-Bot
-discord bot that everything and nothing at all
+discord bot that does everything and nothing at all
 
 [add the bot to your server](https://discord.com/oauth2/authorize?client_id=870509901758201857&permissions=8&scope=bot)
 
