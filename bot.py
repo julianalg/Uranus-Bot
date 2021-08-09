@@ -44,6 +44,8 @@ jokes = ['look in the mirrror', 'what did the fridge say to the toaster? ||nothi
 csResponseQuestions = ['ask L instead', 'therapy is always an option', 'maybe if you stanned nct you’d find the answer', 'ask @CarlSuburbs on twitter', 'yes, 100%, i can’t stress this enough, absolutely, for sure, no doubt', 'stop. baby don’t stop.', 'There is no such thing as a coincidence. The fact that you have asked me this means that we are energetically and spiritually aligned.']
 # tasks
 tasks = ['clean bedroom', 'clear out email inbox', 're-do phone home screen', 'change your wallpapers (tip: ?wallpaper)', 'go on a walk or stretch', 'say good morning/afternoon/evening/night or check up on a friend', "sort and sell things you don't need", "contribute ideas to the bot (?submit)"]
+# tips
+tips = ['?rate: have the bot rate anything', '?cock: :zany_face:', '?dance: dancing cat', '?ask carl: ask carl suburbs something', '?wp: wallpaper', '?recommendations: recommendations']
 
 # bot running stuff 
 
@@ -66,6 +68,9 @@ async def on_message(message):
     if message.content.startswith('?rate'): # from L
         likeResponseRandom = random.choice(rateResponses) # random choice
         await message.channel.send(likeResponseRandom) 
+        
+    if message.content.startswith('?cock'):
+        await message.channel.send(':zany_face:')
       
     if message.content == '?dance':
         await message.channel.send('　 ＼＼ .Λ＿Λ.')
@@ -156,9 +161,7 @@ async def on_message(message):
         randomllustration = random.choice(illustrationWallpaper)
         await message.channel.send(randomllustration)
         
-        
     # recommendation cluster fuck
-        
         
     if message.content == '?recommendations':
         await message.channel.send('what would you like: a movie, tv show, video game, or music artist?')
@@ -242,7 +245,11 @@ async def on_message(message):
       
     if message.content == '?changelog':
       await message.channel.send('view the changelog here: https://github.com/julianagar/Poop-Bot/blob/main/changelog.md')
-        
+      
+    if message.content == '?tip':
+      randomTip = random.choice(tips)
+      await message.channel.send(randomTip)
+      
 # more bot running stuff 
       
 @bot.event
