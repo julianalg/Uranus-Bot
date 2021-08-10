@@ -1,5 +1,11 @@
 # Changelog
 
+**8/9**
+- added ?number
+- added ?fart
+- added kpop album catergory
+- added new album recommendations
+
 **8/6**
 - added 'muy buneo' to rate command
 - added ask carl command
