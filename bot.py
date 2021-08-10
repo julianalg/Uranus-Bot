@@ -1,7 +1,11 @@
 import os
 import discord
+from random import randint
+from random import seed
 import random
 from discord.ext import commands
+
+seed(1)
 
 # rate responses
 rateResponses = ['me likey', 'me no likey', 'muy bueno']
@@ -35,9 +39,10 @@ dramaShows = ['Money Heist: https://imdb.to/3lxwK59', 'The Morning Show: https:/
 rockMusic = ['day6: https://bit.ly/3ig3cH6']
 alternativeMuic = ['Joji: https://bit.ly/3A0Op9b', 'Rex Orange County: https://bit.ly/2Vi61Pl']
 # albums
-popAlbums = ['Happier than Ever: https://bit.ly/3yjMdJv', 'Planet Her: https://bit.ly/3jeaA5h']
-indieAlbums = ['Sling: https://bit.ly/3iksXpM', 'Jubilee: https://bit.ly/3jl9F34']
+popAlbums = ['Happier than Ever: https://bit.ly/3yjMdJv', 'Planet Her: https://bit.ly/3jeaA5h', 'Hot Pink: https://music.youtube.com/playlist?list=OLAK5uy_nN6ToczJSrgaKwaWT3jyvNgedNcs2D94Y&feature=gws_kp_album&feature=gws_kp_artist', 'SOUR: https://music.youtube.com/playlist?list=OLAK5uy_mRc9HLtU_4lp_-MKQNApIRiLwY0M6xoCA&feature=gws_kp_album&feature=gws_kp_artist', 'Blood Harmony: https://music.youtube.com/playlist?list=OLAK5uy_mb0tj-3a2sG_iILVI1LC1jejNJDkTbDeg&feature=gws_kp_album&feature=gws_kp_artist']
+indieAlbums = ['Sling: https://bit.ly/3iksXpM', 'Jubilee: https://bit.ly/3jl9F34', 'Apricot Princess: https://music.youtube.com/playlist?list=OLAK5uy_n7pYtvKITUmxl51Y5Sv7IbU0mdxmskDw8&feature=gws_kp_album&feature=gws_kp_artist', 'Harmony House: https://music.youtube.com/playlist?list=OLAK5uy_nC-k8nCXlXiw_46lVDh5MpKEFs4E7ED_Q&feature=gws_kp_album&feature=gws_kp_artist']
 rnbAlbums = ['Ctrl: https://bit.ly/3fGqPan', "When It's All Said And Done... Take Time: https://bit.ly/3zX5il6"]
+kpopAlbums = ['Regular-Irregular: https://bit.ly/3Arl6Nl', 'THE OTHER SIDE OF THE MOON: https://bit.ly/3fQkitx', 'She Is: https://bit.ly/2U4adS6', 'The Perfect Red Velvet: https://bit.ly/3xxvm4H', 'Feel Special: https://bit.ly/3lIyPvc', 'Remember Us: Youth Part 2: https://bit.ly/37sfCFP', 'FEVER: https://bit.ly/3jHujdE', 'Zero: Fever Part.1: https://music.youtube.com/playlist?list=OLAK5uy_mk8hALS6QQbsjFhXANAoT85cAP9wdMJfE&feature=gws_kp_album&feature=gws_kp_artist', "Don't Call Me: https://music.youtube.com/playlist?list=OLAK5uy_kPiZ5ftT-ifzoFmoYroH_WffozSAFm_eU&feature=gws_kp_album&feature=gws_kp_artist", 'BORDER: CARNIVAL: https://music.youtube.com/playlist?list=OLAK5uy_nxPYOoHgmm1iR-bs39vZNJa3rxr-zhCx8&feature=gws_kp_album&feature=gws_kp_artist', 'Teen, Age: https://music.youtube.com/playlist?list=OLAK5uy_k3LRlcnKy4EcWk1Joc5lKOSlP2-WYbrwY&feature=gws_kp_album&feature=gws_kp_artist', 'NCT-RESONACE,Pt.2 (The 2nd Album): https://music.youtube.com/playlist?list=OLAK5uy_kbSg7V8UK4ZDzPaGRfVJI7rsDP2LQR7Zg&feature=gws_kp_album&feature=gws_kp_artist', "Ex'Act: https://music.youtube.com/playlist?list=OLAK5uy_n0yuTw9cb1INJlnZ9ydDV-zRvbPi_iH4w&feature=gws_kp_album&feature=gws_kp_artist", 'Hello Future: https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwivoPPCmaXyAhUSDzQIHTS0AKQQyCkwAHoECAIQAw&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DQPUjV7epJqE&usg=AOvVaw3t4kqPEwDm6PSpGbjC_t6y', 'instinct:  https://music.youtube.com/watch?v=aOuK3WUffXc&feature=gws_kp_track', 'QUERENCIA: https://music.youtube.com/playlist?list=OLAK5uy_lt7o5tYOgtUF8098LlJxwWoMaHRqwxfDg&feature=gws_kp_album&feature=gws_kp_artist', '130 mood: TRBL: https://music.youtube.com/playlist?list=OLAK5uy_nF3pW60THeSSuC-IdFfQh2wautFpKWRSo&feature=gws_kp_album&feature=gws_kp_artist', 'IS ANYBODY OUT THERE?: https://music.youtube.com/playlist?list=OLAK5uy_nY9vJNOiFsuUe4vsinqpgy3lnk8ykB7lE&feature=gws_kp_album&feature=gws_kp_artist']
 # jokes 
 jokes = ['look in the mirrror', 'what did the fridge say to the toaster? ||nothing at all, they cant talk lmfao||', 'how do you put an elephant in the fridge? || you open the door, put the elephant in, and close the door||']
 # cs asking
@@ -46,6 +51,8 @@ csResponseQuestions = ['ask L instead', 'therapy is always an option', 'maybe if
 tasks = ['clean bedroom', 'clear out email inbox', 're-do phone home screen', 'change your wallpapers (tip: ?wallpaper)', 'go on a walk or stretch', 'say good morning/afternoon/evening/night or check up on a friend', "sort and sell things you don't need", "contribute ideas to the bot (?submit)"]
 # tips
 tips = ['?rate: have the bot rate anything', '?cock: :zany_face:', '?dance: dancing cat', '?ask carl: ask carl suburbs something', '?wp: wallpaper', '?recommendations: recommendations']
+# random number
+cuzRandintDoesntWorkIHateThis = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100]
 
 # bot running stuff 
 
@@ -66,9 +73,11 @@ async def on_message(message):
         await message.channel.send('test message!')
 
     if message.content.startswith('?rate'): # from L
-        likeResponseRandom = random.choice(rateResponses) # random choice
-        await message.channel.send(likeResponseRandom) 
-        
+      await message.channel.send(random.choice(rateResponses))
+
+    if message.content == '?fart':
+      await message.channel.send('https://cdn.discordapp.com/attachments/872928261510934618/874451466394431488/wet-fart-meme-sound-effect-hd.mp4')
+
     if message.content.startswith('?cock'):
         await message.channel.send(':zany_face:')
       
@@ -114,6 +123,11 @@ async def on_message(message):
     if message.content == '?task':
       randomTasks = random.choice(tasks)
       await message.channel.send(randomTasks)
+
+    if message.content.startswith('?number'):
+        rateNumber = randint(0, 100)
+        await message.channel.send(str(rateNumber) + '/100')
+     
 
 
     # wallpaper
@@ -162,7 +176,7 @@ async def on_message(message):
         await message.channel.send(randomllustration)
         
     # recommendation cluster fuck
-        
+    
     if message.content == '?recommendations':
         await message.channel.send('what would you like: a movie, tv show, video game, or music artist?')
         await message.channel.send('do ?(catergory)')
@@ -200,19 +214,19 @@ async def on_message(message):
       await message.channel.send(randomDrama)
 
     if message.content == '?artist':
-      await message.channel.send('which would you like: rock, pop, or indie?')
+      await message.channel.send('which would you like: rock or pop?')
       await message.channel.send('do ?artist (catergory)')
 
-    if message.content == '?art rock':
+    if message.content == '?artist rock':
       randomRock = random.choice(rockMusic)
       await message.channel.send(randomRock)
         
-    if message.content == '?art alternative':
+    if message.content == '?artist alternative':
       randomAlt = random.choice(alternativeMuic)
       await message.channel.send(randomAlt)
           
     if message.content == '?album':
-      await message.channel.send('which would you like: pop, indie, or R&B?')
+      await message.channel.send('which would you like: pop, indie, kpop or R&B?')
       await message.channel.send('do ?album (catergory)')
         
     if message.content == '?album pop':
@@ -222,7 +236,11 @@ async def on_message(message):
     if message.content == '?album indie':
       randomIndie = random.choice(indieAlbums)
       await message.channel.send(randomIndie)
-          
+    
+    if message.content == '?album kpop':
+      randomkPop = random.choice(kpopAlbums)
+      await message.channel.send(randomkPop)
+      
     if message.content == '?album R&B':
       randomRNB = random.choice(rnbAlbums)
       await message.channel.send(randomRNB)
@@ -249,7 +267,7 @@ async def on_message(message):
     if message.content == '?tip':
       randomTip = random.choice(tips)
       await message.channel.send(randomTip)
-      
+
 # more bot running stuff 
       
 @bot.event
