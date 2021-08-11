@@ -1,5 +1,10 @@
 # Changelog
 
+**8/10**
+- added ?void commands
+- changed ?number to ?number rate
+- added comedy album catergory
+
 **8/9**
 - added ?number
 - added ?fart
