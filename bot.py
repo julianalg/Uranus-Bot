@@ -5,8 +5,6 @@ from random import seed
 import random
 from discord.ext import commands
 
-seed(1)
-
 # rate responses
 rateResponses = ['me likey', 'me no likey', 'muy bueno']
 # wallpapers
@@ -43,6 +41,7 @@ popAlbums = ['Happier than Ever: https://bit.ly/3yjMdJv', 'Planet Her: https://b
 indieAlbums = ['Sling: https://bit.ly/3iksXpM', 'Jubilee: https://bit.ly/3jl9F34', 'Apricot Princess: https://music.youtube.com/playlist?list=OLAK5uy_n7pYtvKITUmxl51Y5Sv7IbU0mdxmskDw8&feature=gws_kp_album&feature=gws_kp_artist', 'Harmony House: https://music.youtube.com/playlist?list=OLAK5uy_nC-k8nCXlXiw_46lVDh5MpKEFs4E7ED_Q&feature=gws_kp_album&feature=gws_kp_artist']
 rnbAlbums = ['Ctrl: https://bit.ly/3fGqPan', "When It's All Said And Done... Take Time: https://bit.ly/3zX5il6"]
 kpopAlbums = ['Regular-Irregular: https://bit.ly/3Arl6Nl', 'THE OTHER SIDE OF THE MOON: https://bit.ly/3fQkitx', 'She Is: https://bit.ly/2U4adS6', 'The Perfect Red Velvet: https://bit.ly/3xxvm4H', 'Feel Special: https://bit.ly/3lIyPvc', 'Remember Us: Youth Part 2: https://bit.ly/37sfCFP', 'FEVER: https://bit.ly/3jHujdE', 'Zero: Fever Part.1: https://music.youtube.com/playlist?list=OLAK5uy_mk8hALS6QQbsjFhXANAoT85cAP9wdMJfE&feature=gws_kp_album&feature=gws_kp_artist', "Don't Call Me: https://music.youtube.com/playlist?list=OLAK5uy_kPiZ5ftT-ifzoFmoYroH_WffozSAFm_eU&feature=gws_kp_album&feature=gws_kp_artist", 'BORDER: CARNIVAL: https://music.youtube.com/playlist?list=OLAK5uy_nxPYOoHgmm1iR-bs39vZNJa3rxr-zhCx8&feature=gws_kp_album&feature=gws_kp_artist', 'Teen, Age: https://music.youtube.com/playlist?list=OLAK5uy_k3LRlcnKy4EcWk1Joc5lKOSlP2-WYbrwY&feature=gws_kp_album&feature=gws_kp_artist', 'NCT-RESONACE,Pt.2 (The 2nd Album): https://music.youtube.com/playlist?list=OLAK5uy_kbSg7V8UK4ZDzPaGRfVJI7rsDP2LQR7Zg&feature=gws_kp_album&feature=gws_kp_artist', "Ex'Act: https://music.youtube.com/playlist?list=OLAK5uy_n0yuTw9cb1INJlnZ9ydDV-zRvbPi_iH4w&feature=gws_kp_album&feature=gws_kp_artist", 'Hello Future: https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwivoPPCmaXyAhUSDzQIHTS0AKQQyCkwAHoECAIQAw&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DQPUjV7epJqE&usg=AOvVaw3t4kqPEwDm6PSpGbjC_t6y', 'instinct:  https://music.youtube.com/watch?v=aOuK3WUffXc&feature=gws_kp_track', 'QUERENCIA: https://music.youtube.com/playlist?list=OLAK5uy_lt7o5tYOgtUF8098LlJxwWoMaHRqwxfDg&feature=gws_kp_album&feature=gws_kp_artist', '130 mood: TRBL: https://music.youtube.com/playlist?list=OLAK5uy_nF3pW60THeSSuC-IdFfQh2wautFpKWRSo&feature=gws_kp_album&feature=gws_kp_artist', 'IS ANYBODY OUT THERE?: https://music.youtube.com/playlist?list=OLAK5uy_nY9vJNOiFsuUe4vsinqpgy3lnk8ykB7lE&feature=gws_kp_album&feature=gws_kp_artist']
+comedyAlbums = ['Bo Burnham: Inside (The Songs): https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjgmMmx9KbyAhUS3p4KHY8ZBO0QFnoECAMQAQ&url=https%3A%2F%2Fopen.spotify.com%2Falbum%2F1e5OlE0EY5fucq6GIU1xi3&usg=AOvVaw3BqZQ22RGQIRg1cWTdhq3v', 'New In Town: https://open.spotify.com/album/3ZvULmHESu5iaRNSAIewQ0?autoplay=true']
 # jokes 
 jokes = ['look in the mirrror', 'what did the fridge say to the toaster? ||nothing at all, they cant talk lmfao||', 'how do you put an elephant in the fridge? || you open the door, put the elephant in, and close the door||']
 # cs asking
@@ -53,6 +52,9 @@ tasks = ['clean bedroom', 'clear out email inbox', 're-do phone home screen', 'c
 tips = ['?rate: have the bot rate anything', '?cock: :zany_face:', '?dance: dancing cat', '?ask carl: ask carl suburbs something', '?wp: wallpaper', '?recommendations: recommendations']
 # random number
 cuzRandintDoesntWorkIHateThis = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100]
+
+
+shouts = []
 
 # bot running stuff 
 
@@ -124,11 +126,26 @@ async def on_message(message):
       randomTasks = random.choice(tasks)
       await message.channel.send(randomTasks)
 
-    if message.content.startswith('?number'):
-        rateNumber = randint(0, 100)
-        await message.channel.send(str(rateNumber) + '/100')
      
+    if message.content.startswith('?number rate'):
+        if message.content == '?number rate adam':
+          await message.channel.send('101/100')
+        else:
+          rateNumber = randint(0, 100)
+          await message.channel.send(str(rateNumber) + '/100')
 
+    # void and repeating messages
+
+    if message.content.startswith('?void shout'):
+      shouts.append(message.content)
+      await message.channel.send('done!')
+      print(shouts)
+
+    if message.content == '?void pull':
+      await message.channel.send(random.choice(shouts))
+
+    if message.content.startswith('?repeat after me'):
+      await message.channel.send(message.content)
 
     # wallpaper
     
@@ -138,7 +155,7 @@ async def on_message(message):
         await message.channel.send('avaliable categories: anime, apple, landscape, cityscape, space, color, pride or illustration?')
         await message.channel.send('do "?wp (then the catergory you want)"')
         
-    if message.content == '?wp': # from adam
+    if message.content == '?wp': # same thing but different trigger, i dont know if or commands works with discord.py
         await message.channel.send('all of these wallpapers are intended for phones. support for desktop wallpapers are on their way') 
         await message.channel.send('avaliable categories: anime, apple, landscape, cityscape, space, color, pride or illustration?')
         await message.channel.send('do "?wp (then the catergory you want)"')
@@ -226,7 +243,7 @@ async def on_message(message):
       await message.channel.send(randomAlt)
           
     if message.content == '?album':
-      await message.channel.send('which would you like: pop, indie, kpop or R&B?')
+      await message.channel.send('which would you like: pop, indie, kpop, comedy, or R&B?')
       await message.channel.send('do ?album (catergory)')
         
     if message.content == '?album pop':
@@ -240,6 +257,9 @@ async def on_message(message):
     if message.content == '?album kpop':
       randomkPop = random.choice(kpopAlbums)
       await message.channel.send(randomkPop)
+    
+    if message.content == '?album comedy':
+      await message.channel.send(random.choice(comedyAlbums))
       
     if message.content == '?album R&B':
       randomRNB = random.choice(rnbAlbums)
