@@ -296,4 +296,4 @@ async def on_message(message):
 async def on_message():
     print(message.content)
 			
-bot.run('ODcwNTA5OTAxNzU4MjAxODU3.YQNzhQ.LFhjeuCKIcqkV6UzXfoT8rLyZtI')
+bot.run('token')
