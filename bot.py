@@ -130,6 +130,8 @@ async def on_message(message):
     if message.content.startswith('?number rate'):
         if message.content == '?number rate adam':
           await message.channel.send('101/100')
+        if message.content == "?number rate rina's love for jaymes":
+          await message.channel.send('-1/100')
         else:
           rateNumber = randint(0, 100)
           await message.channel.send(str(rateNumber) + '/100')
@@ -294,4 +296,4 @@ async def on_message(message):
 async def on_message():
     print(message.content)
 			
-bot.run(token)
+bot.run('ODcwNTA5OTAxNzU4MjAxODU3.YQNzhQ.LFhjeuCKIcqkV6UzXfoT8rLyZtI')
