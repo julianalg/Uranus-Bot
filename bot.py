@@ -71,7 +71,7 @@ async def on_message(message):
     if message.content == '?test':
         await message.channel.send('test message!')
 
-    if message.content.startswith('?rate'): # from L
+    if message.content.startswith('?rate'): 
       await message.channel.send(random.choice(rateResponses))
 
     if message.content == '?fart':
@@ -81,19 +81,19 @@ async def on_message(message):
         await message.channel.send(':zany_face:')
       
     if message.content == '?dance':
-        await message.channel.send('　 ＼＼ .Λ＿Λ.')
-        await message.channel.send('　　 ＼(　ˇωˇ)')
-        await message.channel.send('　　　 >　⌒ヽ')
-        await message.channel.send('　　　/ 　 へ＼')
-        await message.channel.send('　　 /　　/　＼＼')
-        await message.channel.send('　　 ﾚ　ノ　　 ヽ_つ')
-        await message.channel.send('　　/　/')
-        await message.channel.send('　 /　/|')
-        await message.channel.send('　(　(ヽ')
-        await message.channel.send('　|　|、＼')
-        await message.channel.send('　| 丿 ＼ ⌒)')
-        await message.channel.send('　| |　　) /')
-        await message.channel.send('`ノ ) 　 Lﾉ')
+      await message.channel.send('　 ＼＼ .Λ＿Λ.')
+      await message.channel.send('　　 ＼(　ˇωˇ)')
+      await message.channel.send('　　　 >　⌒ヽ')
+      await message.channel.send('　　　/ 　 へ＼')
+      await message.channel.send('　　 /　　/　＼＼')
+      await message.channel.send('　　 ﾚ　ノ　　 ヽ_つ')
+      await message.channel.send('　　/　/')
+      await message.channel.send('　 /　/|')
+      await message.channel.send('　(　(ヽ')
+      await message.channel.send('　|　|、＼')
+      await message.channel.send('　| 丿 ＼ ⌒)')
+      await message.channel.send('　| |　　) /')
+      await message.channel.send('`ノ ) 　 Lﾉ')
         
     if message.content.startswith('?ask carl'):
           await message.channel.send(random.choice(csResponseQuestions))
@@ -101,7 +101,7 @@ async def on_message(message):
     if message.content == '?playlist':
       await message.channel.send(random.choice(playlists))
   
-    if message.content == '?among us': # from dj
+    if message.content == '?among us': 
       await message.channel.send(random.choice(amongUs))
     
     if message.content == '?useless':
@@ -117,7 +117,10 @@ async def on_message(message):
       await message.channel.send(random.choice(tasks))
      
     if message.content.startswith("?number rate"):
-      await message.channel.send(str(randint(0,100)) + '/100')
+      if message.content == "?number rate adam":
+           await message.channel.send('101/100')
+      else:
+        await message.channel.send(str(randint(0,100)) + '/100')
 
     # void and repeating messages
 
@@ -134,8 +137,7 @@ async def on_message(message):
 
     # wallpaper
     
-    
-    if message.content == '?wallpaper': # from adam
+    if message.content == '?wallpaper': 
         await message.channel.send('all of these wallpapers are intended for phones. support for desktop wallpapers are on their way') 
         await message.channel.send('avaliable categories: anime, apple, landscape, cityscape, space, color, pride or illustration?')
         await message.channel.send('do "?wp (then the catergory you want)"')
@@ -230,9 +232,8 @@ async def on_message(message):
     if message.content == '?album R&B':
       await message.channel.send(random.choice(rnbAlbums))
       
-      
     # bot info and other stuff
-    
+  
     if message.content == '?submit':
       await message.channel.send('submit stuff here: https://forms.gle/jz4bemZKgjj4d1oWA')
           
