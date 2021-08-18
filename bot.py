@@ -50,7 +50,8 @@ csResponseQuestions = ['ask L instead', 'therapy is always an option', 'maybe if
 tasks = ['clean bedroom', 'clear out email inbox', 're-do phone home screen', 'change your wallpapers (tip: ?wallpaper)', 'go on a walk or stretch', 'say good morning/afternoon/evening/night or check up on a friend', "sort and sell things you don't need", "contribute ideas to the bot (?submit)"]
 # tips
 tips = ['?rate: have the bot rate anything', '?cock: :zany_face:', '?dance: dancing cat', '?ask carl: ask carl suburbs something', '?wp: wallpaper', '?recommendations: recommendations', '? void shout: shout random messages into the void', '?void pull: pull random messages out of the void', '?cute: cute animals', '?among us: im sorry', "?useless: useless website", "?task: a productive task todo"]
-
+# boot messages
+bootMessages = ['im back bitches', 'sorry i shit myself im back now', 'jaymes took me down again sorry', "my downtime was literally everyone's but julian's fault."]
 shouts = []
 
 # bot running stuff 
@@ -59,7 +60,8 @@ bot = commands.Bot(command_prefix='?')
 
 @bot.event
 async def on_ready():
-    print('running now')
+  channel = bot.get_channel(872713496675110973)
+  await channel.send(random.choice(bootMessages))
 
 # commands 
 @bot.listen()
@@ -251,10 +253,10 @@ async def on_message(message):
       
     if message.content == '?tip':
       await message.channel.send(random.choice(tips))
-
-# more bot running stuff 
-      
-@bot.event
+      await message.channel.send(random.choice(rockMusic))
+        
+    if message.content == '?artist alternative':
+      await message.channel.send(random.choice(alternativeMuic))
 async def on_message():
     print(message.content)
 			
