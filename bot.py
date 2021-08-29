@@ -62,10 +62,10 @@ toneIntAna = 0
 webAna = 0
 
 def analytics():
-  print('recommendations called: ' + recommendationAna)
-  print('wallpapers called: ' + wallpaperAna)
-  print('tone indicators called: ' + toneIntAna)
-  print('bot info called: ' + webAna)
+  print('recommendations called: ' + str(recommendationAna))
+  print('wallpapers called: ' + str(wallpaperAna))
+  print('tone indicators called: ' + str(toneIntAna))
+  print('bot info called: ' + str(webAna))
 
 # shouts 
 shouts = []
