@@ -56,17 +56,6 @@ tips = ['?rate: have the bot rate anything', '?cock: :zany_face:', '?dance: danc
 # boot messages
 bootMessages = ['im back bitches', 'sorry i shit myself im back now', 'jaymes took me down again sorry', "my downtime was literally everyone's but julian's fault."]
 
-recommendationAna = 0
-wallpaperAna = 0
-toneIntAna = 0
-webAna = 0
-
-def analytics():
-  print('recommendations called: ' + str(recommendationAna))
-  print('wallpapers called: ' + str(wallpaperAna))
-  print('tone indicators called: ' + str(toneIntAna))
-  print('bot info called: ' + str(webAna))
-
 # shouts 
 shouts = []
 
@@ -167,338 +156,328 @@ async def on_message(message):
       await message.channel.send('all of these wallpapers are intended for phones. support for desktop wallpapers are on their way') 
       await message.channel.send('avaliable categories: anime, apple, landscape, cityscape, space, color, pride or illustration?')
       await message.channel.send('do "?wp (then the catergory you want)"')
-      wallpaperAna = wallpaperAna + 1
+ 
         
     if message.content == '?wp': # same thing but different trigger, i dont know if or commands works with discord.py
       await message.channel.send('all of these wallpapers are intended for phones. support for desktop wallpapers are on their way') 
       await message.channel.send('avaliable categories: anime, apple, landscape, cityscape, space, color, pride or illustration?')
       await message.channel.send('do "?wp (then the catergory you want)"')
-      wallpaperAna = wallpaperAna + 1
+ 
         
     if message.content == '?wp landscape':
       await message.channel.send(random.choice(landscapeWallpaper))
-      wallpaperAna = wallpaperAna + 1
+ 
 
     if message.content == '?wp apple': 
       await message.channel.send(random.choice(appleWallpaper))
-      wallpaperAna = wallpaperAna + 1
+ 
 
     if message.content == '?wp anime':
       await message.channel.send(random.choice(animeWallpaper))
-      wallpaperAna = wallpaperAna + 1
+ 
 
     if message.content == '?wp cityscape':
       await message.channel.send(random.choice(cityWallpper))
-      wallpaperAna = wallpaperAna + 1
+ 
 
     if message.content == '?wp space':
       await message.channel.send(random.choice(spaceWallpaper))
-      wallpaperAna = wallpaperAna + 1
+ 
 
     if message.content == '?wp color':
       await message.channel.send(random.choice(colorWallpaper))
-      wallpaperAna = wallpaperAna + 1
+ 
 
     if message.content == '?wp pride':
       await message.channel.send(random.choice(prideWallpaper))
-      wallpaperAna = wallpaperAna + 1
+ 
         
     if message.content == '?wp illustration':
       await message.channel.send(random.choice(illustrationWallpaper))
-      wallpaperAna = wallpaperAna + 1
+ 
         
     # recommendation cluster fuck
     
     if message.content == '?recommendations':
       await message.channel.send('what would you like: a movie, tv show, video game, or music artist?')
       await message.channel.send('do ?(catergory)')
-      recommendationAna = recommendationAna + 1
+       
         
     if message.content == '?movie':
       await message.channel.send('which would you like: romance, drama, or animated?')
       await message.channel.send('do ?movie (catergory)')
-      recommendationAna = recommendationAna + 1
+       
             
     if message.content == '?movie romance':
       await message.channel.send(random.choice(romanceMovies))
-      recommendationAna = recommendationAna + 1
+       
         
     if message.content == '?movie animated':
       await message.channel.send(random.choice(animatedMovies))
-      recommendationAna = recommendationAna + 1
+       
               
     if message.content == '?tv show':
       await message.channel.send('which would you like: romance, comedy, drama, anime')
       await message.channel.send('do ?tv (catergory)')
-      recommendationAna = recommendationAna + 1
+       
           
     if message.content == '?tv comedy':
       await message.channel.send(random.choice(comedyShows))
-      recommendationAna = recommendationAna + 1
+       
             
     if message.content == '?tv cartoon': 
         await message.channel.send(random.choice(cartoonShows))
-        recommendationAna = recommendationAna + 1
+         
 
     if message.content == '?tv anime':
       await message.channel.send(random.choice(animeShows))
-      recommendationAna = recommendationAna + 1
+       
 
     if message.content == '?tv drama':
       await message.channel.send(random.choice(dramaShows))
-      recommendationAna = recommendationAna + 1
+       
 
     if message.content == '?artist':
       await message.channel.send('which would you like: rock or pop?')
       await message.channel.send('do ?artist (catergory)')
-      recommendationAna = recommendationAna + 1
+       
 
     if message.content == '?artist rock':
       await message.channel.send(random.choice(rockMusic))
-      recommendationAna = recommendationAna + 1
+       
         
     if message.content == '?artist alternative':
       await message.channel.send(random.choice(alternativeMuic))
-      recommendationAna = recommendationAna + 1
+       
           
     if message.content == '?album':
       await message.channel.send('which would you like: pop, indie, kpop, comedy, or R&B?')
       await message.channel.send('do ?album (catergory)')
-      recommendationAna = recommendationAna + 1
+       
         
     if message.content == '?album pop':
       await message.channel.send(random.choice(popAlbums))
-      recommendationAna = recommendationAna + 1
+       
           
     if message.content == '?album indie':
       await message.channel.send(random.choice(indieAlbums))
-      recommendationAna = recommendationAna + 1
+       
     
     if message.content == '?album kpop':
       await message.channel.send(random.choice(kpopAlbums))
-      recommendationAna = recommendationAna + 1
+       
     
     if message.content == '?album comedy':
       await message.channel.send(random.choice(comedyAlbums))
-      recommendationAna = recommendationAna + 1
+       
       
     if message.content == '?album R&B':
       await message.channel.send(random.choice(rnbAlbums))
-      recommendationAna = recommendationAna + 1
+       
 
     # tone indicators
 
     if message.content == '?tone':
       embedVar = discord.Embed(title="tone indicators:", description="usage: ?tone {tone indicator}", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
+       
 
     if message.content == '?tone j':
       embedVar = discord.Embed(title="/j:", description="joking", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
+       
 
     if message.content == '?tone hj':
       embedVar = discord.Embed(title="/hj:", description="half-joking", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
+       
 
     if message.content == '?tone s':
       embedVar = discord.Embed(title="/s:", description="sarcastic", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
+       
 
     if message.content == '?tone gen':
       embedVar = discord.Embed(title="/gen or /g:", description="genuine", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
+       
 
     if message.content == '?tone g':
       embedVar = discord.Embed(title="/gen or /g:", description="geniune", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
+       
 
     if message.content == '?tone srs':
       embedVar = discord.Embed(title="/srs:", description="serious", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
+       
 
     if message.content == '?tone nsrs':
       embedVar = discord.Embed(title="/nsrs:", description="not serious", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
+       
 
     if message.content == '?tone pos':
       embedVar = discord.Embed(title="/pos or /pc:", description="positive connotation", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
+       
 
     if message.content == '?tone pc':
       embedVar = discord.Embed(title="/pos or /pc:", description="positive connotation", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
+       
 
     if message.content == '?tone neu':
       embedVar = discord.Embed(title="/neu:", description="neutral connotation", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
+       
 
     if message.content == '?tone neg':
       embedVar = discord.Embed(title="/neg or /nc:", description="negative connotation", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
+       
 
     if message.content == '?tone nc':
       embedVar = discord.Embed(title="/neg or /nc:", description="negative connotation", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
+       
 
     if message.content == '?tone p':
-      embedVar = discord.Embed(title="/p:", description="platonic", color=0x00ff00)
+      embedVar = discord.Embed(title="/p:", description="platonic, (of love or friendship) intimate and affectionate but not sexual.", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
+       
 
     if message.content == '?tone r':
       embedVar = discord.Embed(title="/r:", description="romantic", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
+       
 
     if message.content == '?tone c':
       embedVar = discord.Embed(title="/c:", description="copypasta", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
+       
 
     if message.content == '?tone l':
       embedVar = discord.Embed(title="/l or /ly:", description="lyrics", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
+       
 
     if message.content == '?tone ly':
       embedVar = discord.Embed(title="/l or /ly:", description="lyrics", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
+       
 
     if message.content == '?tone lh':
       embedVar = discord.Embed(title="/lh:", description="light-hearted", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
+       
 
     if message.content == '?tone nm':
       embedVar = discord.Embed(title="/nm:", description="not mad", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
+       
 
     if message.content == '?tone lu':
       embedVar = discord.Embed(title="/lu:", description="a little-upset", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
+       
 
     if message.content == '?tone nbh':
       embedVar = discord.Embed(title="/nbh", description="for when you're vagueposting or venting, but it's directed at nobody here", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
-
-    if message.content == '?tone nbh':
-      embedVar = discord.Embed(title="/nbh", description="for when you're vagueposting or venting, but it's directed at nobody here", color=0x00ff00)
-      await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
 
     if message.content == '?tone sx':
       embedVar = discord.Embed(title="/sx or /x", description="sexual intent")
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
     
     if message.content == '?tone x':
       embedVar = discord.Embed(title="/sx or x", description="sexual intent")
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
 
     if message.content == '?tone nsx':
       embedVar = discord.Embed(title="/nsx or /nx", description="non-sexual intent")
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
 
     if message.content == '?tone nx':
       embedVar = discord.Embed(title="/nsx or /nx", description="non-sexual intent")
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
 
     if message.content == '?tone rh':
       embedVar = discord.Embed(title="/rh or /rt", description="rhetorical question")
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
 
     if message.content == '?tone rt':
       embedVar = discord.Embed(title="/rh or /rt", description="rhetorical question")
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
 
     if message.content == '?tone t':
       embedVar = discord.Embed(title="/t", description="teasing")
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
       
     if message.content == '?tone ij':
       embedVar = discord.Embed(title="/ij", description="inside joke")
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
+       
 
     if message.content == '?tone m':
       embedVar = discord.Embed(title="/m", description="metaphorically")
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
 
     if message.content == '?tone li':
       embedVar = discord.Embed(title="/li", description="literally")
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
 
     if message.content == '?tone hyp':
       embedVar = discord.Embed(title="/hyperbole", description="hyperbole")
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
 
     if message.content == '?tone f':
       embedVar = discord.Embed(title="/f", description="fake")
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
 
     if message.content == '?tone th':
       embedVar = discord.Embed(title="/th", description="threat")
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
 
-    if message.content == '?tone /cb':
+    if message.content == '?tone cb':
       embedVar = discord.Embed(title="/cb", description="clickbait")
       await message.channel.send(embed=embedVar)
-      toneIntAna = toneIntAna + 1
 
+    if message.content == '?tone explain':
+      embedVar = discord.Embed(title="What are tone indicators?", description="Tone indicators are paralinguistic signifiers used at the ends of statements to help readers fill in the blanks.", url="https://tonetags.carrd.co/#intro")
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone credits':
+      embedVar = discord.Embed(title="source & list of all tone indicators", url="https://toneindicators.carrd.co/")
+      await message.channel.send(embed=edVar)
+
+    # pronouns
+
+    if message.content == '?pronouns':
+      embedVar = discord.Embed(title="pronouns", description="?pronouns {pronoun}")
+      await message.channel.send(embed=embedVar)
+
+
+    if message.content == 'gutter':
+      await message.channel.send('congrats youve won: apple music 6 month code')
+      await message.channel.send('HPP6XT3K37Y3')
+	
     # bot info and other stuff
 
     if message.content == '?credits':
       await message.channel.send('here are all of the cool people who gave ideas to the bot: https://github.com/julianagar/Poop-Bot/blob/main/README.md')
-      webAna = webAna + 1
 
     if message.content == '?website':
       await message.channel.send('https://julianagar.carrd.co/#poop-bot')
-      webAna = webAna + 1
 
     if message.content == '?server':
       await message.channel.send('https://discord.gg/bq6ZuHVaHV')
-      webAna = webAna + 1
 
     if message.content == '?changelog':
       await message.channel.send('view the changelog here: https://github.com/julianagar/Poop-Bot/blob/main/changelog.md')
-      webAna = webAna + 1
       
     if message.content == '?tip':
       await message.channel.send(random.choice(tips))
-      webAna = webAna + 1
-
-# analytics
-
-time.sleep(1800)
-analytics()
 
 # bot running stuff
   
