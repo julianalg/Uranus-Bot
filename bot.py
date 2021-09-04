@@ -54,7 +54,7 @@ tasks = ['clean bedroom', 'clear out email inbox', 're-do phone home screen', 'c
 # tips
 tips = ['?rate: have the bot rate anything', '?cock: :zany_face:', '?dance: dancing cat', '?ask carl: ask carl suburbs something', '?wp: wallpaper', '?recommendations: recommendations', '? void shout: shout random messages into the void', '?void pull: pull random messages out of the void', '?cute: cute animals', '?among us: im sorry', "?useless: useless website", "?task: a productive task todo"]
 # boot messages
-bootMessages = ['im back bitches', 'sorry i shit myself im back now', 'jaymes took me down again sorry', "my downtime was literally everyone's but julian's fault."]
+bootMessages = ['im back bitches', 'sorry i shit myself im back now', "my downtime was literally everyone's but julian's fault."]
 
 # shouts 
 shouts = []
@@ -157,230 +157,181 @@ async def on_message(message):
       await message.channel.send('avaliable categories: anime, apple, landscape, cityscape, space, color, pride or illustration?')
       await message.channel.send('do "?wp (then the catergory you want)"')
  
-        
     if message.content == '?wp': # same thing but different trigger, i dont know if or commands works with discord.py
       await message.channel.send('all of these wallpapers are intended for phones. support for desktop wallpapers are on their way') 
       await message.channel.send('avaliable categories: anime, apple, landscape, cityscape, space, color, pride or illustration?')
       await message.channel.send('do "?wp (then the catergory you want)"')
  
-        
     if message.content == '?wp landscape':
       await message.channel.send(random.choice(landscapeWallpaper))
  
-
     if message.content == '?wp apple': 
       await message.channel.send(random.choice(appleWallpaper))
  
-
     if message.content == '?wp anime':
       await message.channel.send(random.choice(animeWallpaper))
  
-
     if message.content == '?wp cityscape':
       await message.channel.send(random.choice(cityWallpper))
  
-
     if message.content == '?wp space':
       await message.channel.send(random.choice(spaceWallpaper))
  
-
     if message.content == '?wp color':
       await message.channel.send(random.choice(colorWallpaper))
  
-
     if message.content == '?wp pride':
       await message.channel.send(random.choice(prideWallpaper))
- 
-        
+       
     if message.content == '?wp illustration':
       await message.channel.send(random.choice(illustrationWallpaper))
- 
-        
+         
     # recommendation cluster fuck
     
     if message.content == '?recommendations':
       await message.channel.send('what would you like: a movie, tv show, video game, or music artist?')
       await message.channel.send('do ?(catergory)')
        
-        
     if message.content == '?movie':
       await message.channel.send('which would you like: romance, drama, or animated?')
       await message.channel.send('do ?movie (catergory)')
        
-            
     if message.content == '?movie romance':
       await message.channel.send(random.choice(romanceMovies))
-       
-        
+
     if message.content == '?movie animated':
       await message.channel.send(random.choice(animatedMovies))
-       
               
     if message.content == '?tv show':
       await message.channel.send('which would you like: romance, comedy, drama, anime')
       await message.channel.send('do ?tv (catergory)')
-       
           
     if message.content == '?tv comedy':
       await message.channel.send(random.choice(comedyShows))
-       
             
     if message.content == '?tv cartoon': 
         await message.channel.send(random.choice(cartoonShows))
-         
 
     if message.content == '?tv anime':
       await message.channel.send(random.choice(animeShows))
-       
 
     if message.content == '?tv drama':
       await message.channel.send(random.choice(dramaShows))
-       
 
     if message.content == '?artist':
       await message.channel.send('which would you like: rock or pop?')
       await message.channel.send('do ?artist (catergory)')
-       
 
     if message.content == '?artist rock':
       await message.channel.send(random.choice(rockMusic))
-       
         
     if message.content == '?artist alternative':
       await message.channel.send(random.choice(alternativeMuic))
-       
           
     if message.content == '?album':
       await message.channel.send('which would you like: pop, indie, kpop, comedy, or R&B?')
       await message.channel.send('do ?album (catergory)')
-       
         
     if message.content == '?album pop':
       await message.channel.send(random.choice(popAlbums))
-       
           
     if message.content == '?album indie':
       await message.channel.send(random.choice(indieAlbums))
-       
     
     if message.content == '?album kpop':
       await message.channel.send(random.choice(kpopAlbums))
-       
     
     if message.content == '?album comedy':
       await message.channel.send(random.choice(comedyAlbums))
-       
       
     if message.content == '?album R&B':
       await message.channel.send(random.choice(rnbAlbums))
-       
 
     # tone indicators
 
     if message.content == '?tone':
       embedVar = discord.Embed(title="tone indicators:", description="usage: ?tone {tone indicator}", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-       
 
     if message.content == '?tone j':
       embedVar = discord.Embed(title="/j:", description="joking", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-       
 
     if message.content == '?tone hj':
       embedVar = discord.Embed(title="/hj:", description="half-joking", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-       
 
     if message.content == '?tone s':
       embedVar = discord.Embed(title="/s:", description="sarcastic", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-       
 
     if message.content == '?tone gen':
       embedVar = discord.Embed(title="/gen or /g:", description="genuine", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-       
 
     if message.content == '?tone g':
       embedVar = discord.Embed(title="/gen or /g:", description="geniune", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-       
 
     if message.content == '?tone srs':
       embedVar = discord.Embed(title="/srs:", description="serious", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-       
 
     if message.content == '?tone nsrs':
       embedVar = discord.Embed(title="/nsrs:", description="not serious", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-       
 
     if message.content == '?tone pos':
       embedVar = discord.Embed(title="/pos or /pc:", description="positive connotation", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-       
 
     if message.content == '?tone pc':
       embedVar = discord.Embed(title="/pos or /pc:", description="positive connotation", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-       
 
     if message.content == '?tone neu':
       embedVar = discord.Embed(title="/neu:", description="neutral connotation", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-       
 
     if message.content == '?tone neg':
       embedVar = discord.Embed(title="/neg or /nc:", description="negative connotation", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-       
 
     if message.content == '?tone nc':
       embedVar = discord.Embed(title="/neg or /nc:", description="negative connotation", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-       
 
     if message.content == '?tone p':
       embedVar = discord.Embed(title="/p:", description="platonic, (of love or friendship) intimate and affectionate but not sexual.", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-       
 
     if message.content == '?tone r':
       embedVar = discord.Embed(title="/r:", description="romantic", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-       
 
     if message.content == '?tone c':
       embedVar = discord.Embed(title="/c:", description="copypasta", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-       
 
     if message.content == '?tone l':
       embedVar = discord.Embed(title="/l or /ly:", description="lyrics", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-       
 
     if message.content == '?tone ly':
       embedVar = discord.Embed(title="/l or /ly:", description="lyrics", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-       
 
     if message.content == '?tone lh':
       embedVar = discord.Embed(title="/lh:", description="light-hearted", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-       
 
     if message.content == '?tone nm':
       embedVar = discord.Embed(title="/nm:", description="not mad", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-       
 
     if message.content == '?tone lu':
       embedVar = discord.Embed(title="/lu:", description="a little-upset", color=0x00ff00)
       await message.channel.send(embed=embedVar)
-       
 
     if message.content == '?tone nbh':
       embedVar = discord.Embed(title="/nbh", description="for when you're vagueposting or venting, but it's directed at nobody here", color=0x00ff00)
@@ -417,8 +368,7 @@ async def on_message(message):
     if message.content == '?tone ij':
       embedVar = discord.Embed(title="/ij", description="inside joke")
       await message.channel.send(embed=embedVar)
-       
-
+      
     if message.content == '?tone m':
       embedVar = discord.Embed(title="/m", description="metaphorically")
       await message.channel.send(embed=embedVar)
@@ -456,12 +406,7 @@ async def on_message(message):
     if message.content == '?pronouns':
       embedVar = discord.Embed(title="pronouns", description="?pronouns {pronoun}")
       await message.channel.send(embed=embedVar)
-
-
-    if message.content == 'gutter':
-      await message.channel.send('congrats youve won: apple music 6 month code')
-      await message.channel.send('HPP6XT3K37Y3')
-	
+      
     # bot info and other stuff
 
     if message.content == '?credits':
