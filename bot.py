@@ -55,7 +55,8 @@ tasks = ['clean bedroom', 'clear out email inbox', 're-do phone home screen', 'c
 tips = ['?rate: have the bot rate anything', '?cock: :zany_face:', '?dance: dancing cat', '?ask carl: ask carl suburbs something', '?wp: wallpaper', '?recommendations: recommendations', '? void shout: shout random messages into the void', '?void pull: pull random messages out of the void', '?cute: cute animals', '?among us: im sorry', "?useless: useless website", "?task: a productive task todo"]
 # boot messages
 bootMessages = ['im back bitches', 'sorry i shit myself im back now', "my downtime was literally everyone's but julian's fault."]
-
+# "porn" commands
+caughtCommands = ['<https://www.youtube.com/watch?v=nwTBYcvk_tg>', ':camera_with_flash:']
 # shouts 
 shouts = []
 
@@ -406,6 +407,11 @@ async def on_message(message):
     if message.content == '?pronouns':
       embedVar = discord.Embed(title="pronouns", description="?pronouns {pronoun}")
       await message.channel.send(embed=embedVar)
+
+    # "porn" commands
+
+    if message.content == '?porn':
+      await message.channel.send(random.choice(caughtCommands))
       
     # bot info and other stuff
 
