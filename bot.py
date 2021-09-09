@@ -4,7 +4,7 @@ import discord
 from random import randint
 from random import seed
 import random
-from discord.ext import commands
+from discord.ext import commands, tasks
 from discord.ext.commands import CommandNotFound
 
 # list dependencies
@@ -54,7 +54,7 @@ tasks = ['clean bedroom', 'clear out email inbox', 're-do phone home screen', 'c
 # tips
 tips = ['?rate: have the bot rate anything', '?cock: :zany_face:', '?dance: dancing cat', '?ask carl: ask carl suburbs something', '?wp: wallpaper', '?recommendations: recommendations', '? void shout: shout random messages into the void', '?void pull: pull random messages out of the void', '?cute: cute animals', '?among us: im sorry', "?useless: useless website", "?task: a productive task todo"]
 # boot messages
-bootMessages = ['im back bitches', 'sorry i shit myself im back now', "my downtime was literally everyone's but julian's fault."]
+bootMessages = ['im back bitches', 'sorry i shit myself im back now', "my downtime was literally everyone's but julian's fault.", "the asshole closed his macbook again :rolling_eyes:"]
 # "porn" commands
 caughtCommands = ['<https://www.youtube.com/watch?v=nwTBYcvk_tg>', ':camera_with_flash:']
 # shouts 
@@ -73,10 +73,14 @@ async def on_command_error(ctx, error):
 
 @bot.event
 async def on_ready():
+  testingInput = input("Are you testing?")
   print("poop bot is now online")
-  channel = bot.get_channel(872713496675110973)
-  await channel.send(random.choice(bootMessages))
-
+  if testingInput == 'n':
+    channel = bot.get_channel(872713496675110973)
+    await channel.send(random.choice(bootMessages))
+  elif testingInput == 'y':
+    print("no boot message will be sent")
+  
 # commands 
 @bot.listen()
 async def on_message(message):
@@ -431,8 +435,8 @@ async def on_message(message):
       await message.channel.send(random.choice(tips))
 
 # bot running stuff
-  
+
 async def on_message():
-    print(message.content)
+  print(message.content)
 			
 bot.run('token')
