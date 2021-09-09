@@ -4,7 +4,8 @@ import discord
 from random import randint
 from random import seed
 import random
-from discord.ext import commands
+from discord import FFmpegPCMAudio
+from discord.ext import commands, tasks
 from discord.ext.commands import CommandNotFound
 
 # list dependencies
@@ -54,7 +55,7 @@ tasks = ['clean bedroom', 'clear out email inbox', 're-do phone home screen', 'c
 # tips
 tips = ['?rate: have the bot rate anything', '?cock: :zany_face:', '?dance: dancing cat', '?ask carl: ask carl suburbs something', '?wp: wallpaper', '?recommendations: recommendations', '? void shout: shout random messages into the void', '?void pull: pull random messages out of the void', '?cute: cute animals', '?among us: im sorry', "?useless: useless website", "?task: a productive task todo"]
 # boot messages
-bootMessages = ['im back bitches', 'sorry i shit myself im back now', "my downtime was literally everyone's but julian's fault."]
+bootMessages = ['im back bitches', 'sorry i shit myself im back now', "my downtime was literally everyone's but julian's fault.", "the asshole closed his macbook again :rolling_eyes:"]
 # "porn" commands
 caughtCommands = ['<https://www.youtube.com/watch?v=nwTBYcvk_tg>', ':camera_with_flash:']
 # shouts 
@@ -69,7 +70,6 @@ async def on_command_error(ctx, error):
     if isinstance(error, CommandNotFound):
         return
     raise error
-
 
 @bot.event
 async def on_ready():
@@ -430,9 +430,37 @@ async def on_message(message):
     if message.content == '?tip':
       await message.channel.send(random.choice(tips))
 
+@bot.command(name='join', help='Tells the bot to join the voice channel')
+async def join(ctx):
+    if not ctx.message.author.voice:
+        await ctx.send("{} is not connected to a voice channel".format(ctx.message.author.name))
+        return
+    else:
+        channel = ctx.message.author.voice.channel
+    await channel.connect()
+    
+
+@bot.command(name="play", help="plays the music")
+async def play(ctx):
+  if (ctx.author.voice):
+    channel = ctx.message.author.voice.channel
+    vc = await channel.connect()
+    vc.play(discord.FFmpegPCMAudio(executable="/Users/juliangarcia/ffmpeg/4.4_2/bin/ffmpeg", source="remember.mp3"))
+    player = voice.play(source)
+
+@bot.command(name='leave', help='To make the bot leave the voice channel')
+async def leave(ctx):
+    voice_client = ctx.message.guild.voice_client
+    if voice_client.is_connected():
+        await voice_client.disconnect()
+    else:
+        await ctx.send("The bot is not connected to a voice channel.")
+
+
+
 # bot running stuff
-  
+
 async def on_message():
-    print(message.content)
+  print(message.content)
 			
 bot.run('token')
