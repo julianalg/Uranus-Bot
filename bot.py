@@ -70,6 +70,23 @@ async def on_message(message):
     if message.content == '?time machine amazon':
         await message.channel.send(embed=discord.Embed(title="Amazon 10 years ago today", description="[link](https://ten-years-ago.neal.fun/amazon.com/)"))
 
+    if message.content == '?time machine youtube':
+        await message.channel.send(embed=discord.Embed(title="YouTube 10 years ago today", description="[link](https://ten-years-ago.neal.fun/youtube.com/)"))
+
+    if message.content == '?time machine espn':
+        await message.channel.send(embed=discord.Embed(title="ESPN 10 years ago today"), description="[link](https://ten-years-ago.neal.fun/espn.go.com/)")
+
+    if message.content == '?time machine apple':
+        await message.channel.send(embed=discord.Embed(title="Apple.com 10 years ago today", description="[link](https://ten-years-ago.neal.fun/apple.com/)"))
+
+    if message.content == '?time machine imdb':
+        await message.channel.send(embed=discord.Embed(title="IMDb 10 years ago today"), description="[link](https://ten-years-ago.neal.fun/imdb.com/)")
+
+    if message.content == '?time machine cnet':
+        await message.channel.send(embed=discord.Embed(title="CNET 10 years ago today", description="[link](https://ten-years-ago.neal.fun/cnet.com/)"))
+
+    if message.content == '?time machine ign':
+        await message.channel.send(embed=discord.Embed(title="IGN 10 years ago today", description="[link](https://ten-years-ago.neal.fun/ign.com/)"))
 
 
 async def on_message():
