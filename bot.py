@@ -9,12 +9,15 @@ from discord.ext import commands, tasks
 from discord.ext.commands import CommandNotFound
 
 bot = commands.Bot(command_prefix='ur')
-
+bootMessages = ["back from my nap", "oops back to make ur day awful"]
 shouts = []
 
 @bot.event
 async def on_ready():
     print("poop bot is now online!")
+    channel = bot.get_channel(872713496675110973)
+    await channel.send(random.choice(bootMessages))
+
 
 @bot.listen()
 async def on_message(message):
@@ -87,6 +90,158 @@ async def on_message(message):
 
     if message.content == '?time machine ign':
         await message.channel.send(embed=discord.Embed(title="IGN 10 years ago today", description="[link](https://ten-years-ago.neal.fun/ign.com/)"))
+
+    if message.content == '?tone':
+      embedVar = discord.Embed(title="tone indicators:", description="usage: ?tone {tone indicator}", color=0x00ff00)
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone j':
+      embedVar = discord.Embed(title="/j:", description="joking", color=0x00ff00)
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone hj':
+      embedVar = discord.Embed(title="/hj:", description="half-joking", color=0x00ff00)
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone s':
+      embedVar = discord.Embed(title="/s:", description="sarcastic", color=0x00ff00)
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone gen':
+      embedVar = discord.Embed(title="/gen or /g:", description="genuine", color=0x00ff00)
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone g':
+      embedVar = discord.Embed(title="/gen or /g:", description="geniune", color=0x00ff00)
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone srs':
+      embedVar = discord.Embed(title="/srs:", description="serious", color=0x00ff00)
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone nsrs':
+      embedVar = discord.Embed(title="/nsrs:", description="not serious", color=0x00ff00)
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone pos':
+      embedVar = discord.Embed(title="/pos or /pc:", description="positive connotation", color=0x00ff00)
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone pc':
+      embedVar = discord.Embed(title="/pos or /pc:", description="positive connotation", color=0x00ff00)
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone neu':
+      embedVar = discord.Embed(title="/neu:", description="neutral connotation", color=0x00ff00)
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone neg':
+      embedVar = discord.Embed(title="/neg or /nc:", description="negative connotation", color=0x00ff00)
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone nc':
+      embedVar = discord.Embed(title="/neg or /nc:", description="negative connotation", color=0x00ff00)
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone p':
+      embedVar = discord.Embed(title="/p:", description="platonic, (of love or friendship) intimate and affectionate but not sexual.", color=0x00ff00)
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone r':
+      embedVar = discord.Embed(title="/r:", description="romantic", color=0x00ff00)
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone c':
+      embedVar = discord.Embed(title="/c:", description="copypasta", color=0x00ff00)
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone l':
+      embedVar = discord.Embed(title="/l or /ly:", description="lyrics", color=0x00ff00)
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone ly':
+      embedVar = discord.Embed(title="/l or /ly:", description="lyrics", color=0x00ff00)
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone lh':
+      embedVar = discord.Embed(title="/lh:", description="light-hearted", color=0x00ff00)
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone nm':
+      embedVar = discord.Embed(title="/nm:", description="not mad", color=0x00ff00)
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone lu':
+      embedVar = discord.Embed(title="/lu:", description="a little-upset", color=0x00ff00)
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone nbh':
+      embedVar = discord.Embed(title="/nbh", description="for when you're vagueposting or venting, but it's directed at nobody here", color=0x00ff00)
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone sx':
+      embedVar = discord.Embed(title="/sx or /x", description="sexual intent")
+      await message.channel.send(embed=embedVar)
+    
+    if message.content == '?tone x':
+      embedVar = discord.Embed(title="/sx or x", description="sexual intent")
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone nsx':
+      embedVar = discord.Embed(title="/nsx or /nx", description="non-sexual intent")
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone nx':
+      embedVar = discord.Embed(title="/nsx or /nx", description="non-sexual intent")
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone rh':
+      embedVar = discord.Embed(title="/rh or /rt", description="rhetorical question")
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone rt':
+      embedVar = discord.Embed(title="/rh or /rt", description="rhetorical question")
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone t':
+      embedVar = discord.Embed(title="/t", description="teasing")
+      await message.channel.send(embed=embedVar)
+      
+    if message.content == '?tone ij':
+      embedVar = discord.Embed(title="/ij", description="inside joke")
+      await message.channel.send(embed=embedVar)
+      
+    if message.content == '?tone m':
+      embedVar = discord.Embed(title="/m", description="metaphorically")
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone li':
+      embedVar = discord.Embed(title="/li", description="literally")
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone hyp':
+      embedVar = discord.Embed(title="/hyperbole", description="hyperbole")
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone f':
+      embedVar = discord.Embed(title="/f", description="fake")
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone th':
+      embedVar = discord.Embed(title="/th", description="threat")
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone cb':
+      embedVar = discord.Embed(title="/cb", description="clickbait")
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone explain':
+      embedVar = discord.Embed(title="What are tone indicators?", description="Tone indicators are paralinguistic signifiers used at the ends of statements to help readers fill in the blanks.", url="https://tonetags.carrd.co/#intro")
+      await message.channel.send(embed=embedVar)
+
+    if message.content == '?tone credits':
+      embedVar = discord.Embed(title="source & list of all tone indicators", url="https://toneindicators.carrd.co/")
+      await message.channel.send(embed=embedVar)
 
 
 async def on_message():
