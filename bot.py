@@ -8,15 +8,12 @@ import random
 from discord.ext import commands, tasks
 from discord.ext.commands import CommandNotFound
 
-intents = discord.Intents()
-intents.all()
-bot = commands.Bot(command_prefix='?', intents=intents)
+bot = commands.Bot(command_prefix='?')
 bootMessages = ["back from my nap", "oops back to make ur day awful"]
 shouts = []
 
 @bot.event
 async def on_ready():
-   await bot.change_presence(activity=discord.Game('support ukraine!'))
    print("poop bot is now online!") 
 
 
@@ -248,4 +245,4 @@ async def on_message(message):
 async def on_message():
   print(message.content)
 
-bot.run('ODcwNTA5OTAxNzU4MjAxODU3.YQNzhQ.IyHURxR3IqrNTSzP8HlU80C5nIo')
+bot.run('ODcwNTA5OTAxNzU4MjAxODU3.YQNzhQ.THplVI1JJYZYLpnRCOuS4n8uNis')
